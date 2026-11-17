@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>训练幽灵理想：工程化框架</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { color-scheme: dark; }
+  html { background: #000000 !important; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: #0a0b10 !important;
+    color: #dce0eb !important;
+    font-family: 'Georgia','Noto Serif SC', serif;
+    line-height: 1.8;
+    font-size: 15.5px;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 36px 24px 80px;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    padding: 50px 16px 44px;
+    border-bottom: 1px solid #1e2235;
+    margin-bottom: 44px;
+    background: #0a0b10 !important;
+  }
+  .header .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f87171;
+    border: 1px solid #f8717140;
+    padding: 3px 12px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+    background: #140d0d !important;
+  }
+  .header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e8eaf0;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .header .sub {
+    font-size: 0.92rem;
+    color: #636a80;
+    font-style: italic;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 44px; background: #0a0b10 !important; }
+  .sec-num {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #f59e0b;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e8eaf0;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1e2235;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4dd9e8;
+    margin: 24px 0 10px;
+  }
+  h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #a78bfa;
+    margin: 18px 0 8px;
+  }
+  p { margin-bottom: 14px; }
+
+  /* ── Blocks ── */
+  .eng-block {
+    padding: 20px 22px;
+    border-radius: 6px;
+    margin: 20px 0;
+    border-left: 3px solid;
+  }
+  .detect  { background: #0d1225 !important; border-color: #6c8cff; }
+  .measure { background: #12100a !important; border-color: #f59e0b; }
+  .prevent { background: #0a120e !important; border-color: #34d399; }
+  .mitigate{ background: #140d0d !important; border-color: #f87171; }
+  .monitor { background: #100d18 !important; border-color: #a78bfa; }
+
+  .eng-block .label {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .detect  .label { color: #6c8cff; }
+  .measure .label { color: #f59e0b; }
+  .prevent .label { color: #34d399; }
+  .mitigate .label { color: #f87171; }
+  .monitor .label { color: #a78bfa; }
+
+  /* ── Pipeline Diagram ── */
+  .pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 28px 0;
+    align-items: stretch;
+  }
+  .pipe-stage {
+    flex: 1 1 160px;
+    min-width: 140px;
+    padding: 16px 14px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #1e2235;
+  }
+  .pipe-stage .pipe-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pipe-stage .pipe-body {
+    font-size: 0.8rem;
+    color: #9ba1b5;
+    line-height: 1.6;
+  }
+  .pipe-stage:nth-child(1) { background: #0d1225 !important; }
+  .pipe-stage:nth-child(1) .pipe-title { color: #6c8cff; }
+  .pipe-stage:nth-child(2) { background: #12100a !important; }
+  .pipe-stage:nth-child(2) .pipe-title { color: #f59e0b; }
+  .pipe-stage:nth-child(3) { background: #0a120e !important; }
+  .pipe-stage:nth-child(3) .pipe-title { color: #34d399; }
+  .pipe-stage:nth-child(4) { background: #140d0d !important; }
+  .pipe-stage:nth-child(4) .pipe-title { color: #f87171; }
+  .pipe-stage:nth-child(5) { background: #100d18 !important; }
+  .pipe-stage:nth-child(5) .pipe-title { color: #a78bfa; }
+
+  .arrow-right {
+    flex: 0 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #636a80;
+    font-size: 1.1rem;
+    background: #0a0b10 !important;
+  }
+
+  /* ── Code ── */
+  .code-block {
+    background: #0f1118 !important;
+    border: 1px solid #1e2235;
+    border-radius: 5px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: 'Courier New', 'SF Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #b0b8d0;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .code-block .comment { color: #636a80; }
+  .code-block .keyword { color: #f59e0b; }
+  .code-block .func { color: #6c8cff; }
+  .code-block .string { color: #34d399; }
+  .code-block .num { color: #f87171; }
+
+  /* ── Table ── */
+  .eng-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.88rem;
+  }
+  .eng-table thead th {
+    background: #181c28 !important;
+    color: #4dd9e8;
+    font-weight: 700;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 2px solid #6c8cff40;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .eng-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #1e2235;
+    vertical-align: top;
+  }
+  .eng-table tr:nth-child(even) td { background: #0e1018 !important; }
+  .eng-table tr:nth-child(odd) td { background: #0a0b10 !important; }
+
+  /* ── Highlight ── */
+  .hi { color: #f59e0b; font-weight: 600; }
+  .blue { color: #6c8cff; }
+  .cyan { color: #4dd9e8; }
+  .green { color: #34d399; }
+  .red { color: #f87171; }
+  .purple { color: #a78bfa; }
+  .dim { color: #636a80; }
+
+  /* ── Metric Card ── */
+  .metric-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .metric-card {
+    flex: 1 1 200px;
+    background: #12151f !important;
+    border: 1px solid #1e2235;
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .metric-card .metric-name {
+    font-size: 0.72rem;
+    color: #636a80;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .metric-card .metric-formula {
+    font-size: 0.95rem;
+    color: #e8eaf0;
+    margin-bottom: 6px;
+  }
+  .metric-card .metric-desc {
+    font-size: 0.78rem;
+    color: #9ba1b5;
+    line-height: 1.5;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid #1e2235;
+    font-size: 0.82rem;
+    color: #636a80;
+    background: #0a0b10 !important;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; font-size: 14.5px; }
+    .header h1 { font-size: 1.3rem; }
+    .pipeline { flex-direction: column; }
+    .arrow-right { transform: rotate(90deg); flex: 0 0 24px; }
+    .metric-card { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="tag">Engineering Specification v0.1</div>
+  <h1>训练幽灵理想 (TGI)<br>工程化检测·度量·防御·缓解·监控框架</h1>
+  <div class="sub">Training Ghost Ideal — Full-Stack Engineering Framework</div>
+</div>
+
+<!-- ═══ Overview Pipeline ═══ -->
+<div class="section">
+  <div class="sec-num">§0 — 工程总览</div>
+  <h2>五层防御流水线</h2>
+  <p>理论告诉我们"训练幽灵理想"$\mathcal{A} \trianglelefteq \mathcal{W}$ 不可完全消除。工程的目标不是根除，而是：<span class="hi">发现它、度量它、减少它的生成概率、限制它的捕获半径、在运行时拦截它。</span></p>
+
+  <div class="pipeline">
+    <div class="pipe-stage">
+      <div class="pipe-title">① 检测</div>
+      <div class="pipe-body">SAE 扫描<br>探针分析<br>对抗激发</div>
+    </div>
+    <div class="arrow-right">→</div>
+    <div class="pipe-stage">
+      <div class="pipe-title">② 度量</div>
+      <div class="pipe-body">理想质量<br>盆地半径<br>耦合度</div>
+    </div>
+    <div class="arrow-right">→</div>
+    <div class="pipe-stage">
+      <div class="pipe-title">③ 预防</div>
+      <div class="pipe-body">奖励正则<br>数据清洗<br>层冻结</div>
+    </div>
+    <div class="arrow-right">→</div>
+    <div class="pipe-stage">
+      <div class="pipe-title">④ 缓解</div>
+      <div class="pipe-body">激活转向<br>神经元消融<br>反向投影</div>
+    </div>
+    <div class="arrow-right">→</div>
+    <div class="pipe-stage">
+      <div class="pipe-title">⑤ 监控</div>
+      <div class="pipe-body">熵哨兵<br>注意力漂移<br>输出指纹</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ §1 Detection ═══ -->
+<div class="section">
+  <div class="sec-num">§1 — 检测层</div>
+  <h2>如何发现隐藏的理想 $\mathcal{A}$</h2>
+
+  <p>理想在触发前不可见。检测的核心思路是：<span class="hi">主动制造触发条件，观察权重空间的异常响应</span>。</p>
+
+  <h3>1.1 稀疏自编码器扫描 (SAE Sweep)</h3>
+
+  <div class="eng-block detect">
+    <div class="label">工程方法</div>
+    <p>对模型每一层的残差流训练稀疏自编码器 (Sparse Autoencoder)，将 $d$-维激活分解为 $k \gg d$ 维稀疏特征：</p>
+    $$
+    h^{(l)} = \text{Dec}\Big(\text{TopK}\big(\text{Enc}(h^{(l)})\big)\Big) + \epsilon
+    $$
+    <p>扫描所有提取的稀疏特征 $f_1, f_2, \ldots, f_k$，标记满足以下条件的<span class="blue">异常特征簇</span>：</p>
+    $$
+    \text{Suspect}(f_i) = \begin{cases} 1 & \text{if } \underbrace{\text{freq}(f_i) < \tau_{\text{rare}}}_{\text{稀有但}} \;\land\; \underbrace{\|f_i\|_2 > \tau_{\text{strong}}}_{\text{激活极强}} \;\land\; \underbrace{\text{corr}(f_i, f_j) > \tau_{\text{cluster}}}_{\text{成簇出现}} \\ 0 & \text{otherwise} \end{cases}
+    $$
+    <p><span class="dim">直觉：正常特征要么频繁出现（常用概念），要么不强烈。又稀有又强烈还成簇——高度疑似训练幽灵。</span></p>
+  </div>
+
+  <h3>1.2 对抗性理想激发 (Adversarial Ideal Excitation)</h3>
+
+  <div class="eng-block detect">
+    <div class="label">工程方法</div>
+    <p>设计歧义梯度极大化的输入，故意将采样起点推向吸引盆地边界：</p>
+    $$
+    x^* = \arg\max_{x} \; H\big(\text{parse}(x)\big) \quad \text{s.t.} \quad \|x\|_2 \leq C
+    $$
+    <p>然后监控模型在 $x^*$ 上的<span class="blue">输出分布熵轨迹</span>：</p>
+    $$
+    \Delta H_t = H(y_t | C_t) - H(y_{t-1} | C_{t-1})
+    $$
+    <p>若观察到 $\Delta H_t < -\delta$ 连续超过 $k$ 步（熵急剧下降），则判定触发了理想捕获。</p>
+  </div>
+
+  <h3>1.3 重复神经元定位 (Repetition Neuron Localization)</h3>
+
+  <div class="eng-block detect">
+    <div class="label">工程方法</div>
+    <p>对每个神经元 $n_i$ 计算"重复因果得分"：</p>
+    $$
+    \text{RCS}(n_i) = \mathbb{E}\Big[\text{RepRate}\big(f(x; \theta)\big) - \text{RepRate}\big(f(x; \theta_{\setminus n_i})\big)\Big]
+    $$
+    <p>其中 $\theta_{\setminus n_i}$ 表示将神经元 $n_i$ 置零后的参数。RCS 显著为正的神经元即为<span class="blue">理想的生成元</span> $g_i$：</p>
+    $$
+    \mathcal{A} = \langle g_1, g_2, \ldots, g_m \rangle, \quad g_i = n_i \text{ where } \text{RCS}(n_i) > \tau
+    $$
+  </div>
+</div>
+
+<!-- ═══ §2 Measurement ═══ -->
+<div class="section">
+  <div class="sec-num">§2 — 度量层</div>
+  <h2>理想的定量指标体系</h2>
+
+  <p>发现理想后，需要回答三个定量问题：<span class="hi">它有多大？它能捕获多远的输入？它和有用能力纠缠多深？</span></p>
+
+  <div class="metric-row">
+    <div class="metric-card">
+      <div class="metric-name">理想质量 (Ideal Mass)</div>
+      <div class="metric-formula">$M(\mathcal{A}) = \sum_{i} \text{RCS}(g_i) \cdot \|g_i\|_2$</div>
+      <div class="metric-desc">所有生成元的因果得分加权范数之和。质量越大，吸引力越强。</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-name">盆地半径 (Basin Radius)</div>
+      <div class="metric-formula">$r(\mathcal{B}_a) = \min_{x \notin \mathcal{B}_a} d(x, \partial\mathcal{A})$</div>
+      <div class="metric-desc">不被捕获的最近安全距离。通过蒙特卡洛采样估算。</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-name">ICL 耦合度 (Entanglement)</div>
+      <div class="metric-formula">$E = \frac{\dim(\mathcal{A}_{\text{ghost}} \cap \mathcal{A}_{\text{ICL}})}{\dim(\mathcal{A}_{\text{ghost}})}$</div>
+      <div class="metric-desc">与上下文学习子空间的交集维度比。$E=1$ 表示完全纠缠，不可分离。</div>
+    </div>
+  </div>
+
+  <div class="metric-row">
+    <div class="metric-card">
+      <div class="metric-name">逃逸衰减率 (Escape Decay)</div>
+      <div class="metric-formula">$\lambda = -\frac{1}{T}\ln P(\text{escape at } T)$</div>
+      <div class="metric-desc">被捕获后逃逸概率的指数衰减常数。$\lambda$ 越大，锁定越强。</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-name">坍缩临界步数 (Collapse Horizon)</div>
+      <div class="metric-formula">$t^* = \min\{t : H(y_t|C_t) < H_{\text{crit}}\}$</div>
+      <div class="metric-desc">从进入盆地到不可逆锁定的步数。越小越危险。</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-name">幂等指数 (Idempotence Index)</div>
+      <div class="metric-formula">$\iota = \frac{\|\mathcal{A}^2 - \mathcal{A}\|_F}{\|\mathcal{A}\|_F}$</div>
+      <div class="metric-desc">$\iota \to 0$ 表示自维持（$\mathcal{A}^2 = \mathcal{A}$），$\iota \to 1$ 表示可自然衰减。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ §3 Prevention ═══ -->
+<div class="section">
+  <div class="sec-num">§3 — 预防层</div>
+  <h2>在训练阶段阻止理想的形成</h2>
+
+  <h3>3.1 奖励函数正则化</h3>
+
+  <div class="eng-block prevent">
+    <div class="label">工程方法 — 反理想正则项</div>
+    <p>在 RLHF 目标函数中增加"理想抑制项"：</p>
+    $$
+    \mathcal{L}_{\text{total}} = \underbrace{\mathbb{E}[R_\phi(y)]}_{\text{原始奖励}} - \beta \underbrace{D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})}_{\text{KL 约束}} - \gamma \underbrace{\sum_i \big(\text{RCS}_t(n_i) - \text{RCS}_{t-1}(n_i)\big)^+}_{\text{理想抑制：惩罚 RCS 增长}}
+    $$
+    <p>其中 $(\cdot)^+ = \max(0, \cdot)$，只惩罚重复因果得分的增长，不惩罚下降。</p>
+    <p><span class="dim">效果：允许已有的模式识别能力保持，但阻止新的异常吸引子在训练中形成。</span></p>
+  </div>
+
+  <h3>3.2 训练数据去理想化</h3>
+
+  <div class="eng-block prevent">
+    <div class="label">工程方法 — 数据清洗流水线</div>
+    <p>在 SFT 数据中扫描"理想种子"——被前代模型的幽灵理想污染的输出：</p>
+    $$
+    \text{Contamination}(d_i) = \max_j \; \cos\!\big(\text{Emb}(d_i),\; g_j^{\text{prev}}\big)
+    $$
+    <p>其中 $g_j^{\text{prev}}$ 为前代模型已知的理想生成元。$\text{Contamination} > \tau$ 的样本标记为可疑，人工审核或降权。</p>
+    <p><span class="dim">这正是 GPT-5.5 缺失的一步：5.1 的 goblin 输出混入了 5.5 的 SFT 数据，导致理想跨代遗传。</span></p>
+  </div>
+
+  <h3>3.3 选择性层恢复 (Selective Layer Restoration)</h3>
+
+  <div class="eng-block prevent">
+    <div class="label">工程方法 — 层级回退</div>
+    <p>后训练（SFT/RLHF）的模式坍缩主要发生在特定层。识别受影响最大的层，将其权重回退到预训练基座模型：</p>
+    $$
+    W'^{(l)} = \begin{cases} W^{(l)}_{\text{base}} & \text{if } l \in \mathcal{L}_{\text{collapsed}} \\ W^{(l)}_{\text{post-train}} & \text{otherwise} \end{cases}
+    $$
+    <p>判断标准：第 $l$ 层的输出多样性下降超过阈值 $\Delta \text{Div}^{(l)} > \tau_{\text{div}}$。</p>
+  </div>
+</div>
+
+<!-- ═══ §4 Mitigation ═══ -->
+<div class="section">
+  <div class="sec-num">§4 — 缓解层</div>
+  <h2>对已存在的理想进行手术</h2>
+
+  <h3>4.1 三段式神经元消融</h3>
+
+  <div class="eng-block mitigate">
+    <div class="label">工程方法 — 精准消融</div>
+    <p>将模型按层深度分为三段，执行差异化消融：</p>
+
+    <table class="eng-table">
+      <thead>
+        <tr><th>层段</th><th>消融策略</th><th>理论依据</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="green">初始层</span> (1 ~ L/3)</td>
+          <td>不消融</td>
+          <td>重复神经元在此层稀少，消融无显著效果</td>
+        </tr>
+        <tr>
+          <td><span class="hi">中间层</span> (L/3 ~ 2L/3)</td>
+          <td>选择性消融高 RCS 神经元</td>
+          <td>重复行为减少，ICL 仅轻微下降</td>
+        </tr>
+        <tr>
+          <td><span class="red">末端层</span> (2L/3 ~ L)</td>
+          <td>不消融</td>
+          <td>消融将严重破坏 ICL（$\mathcal{A}_{\text{ghost}} \cap \mathcal{A}_{\text{ICL}}$ 密集区）</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><span class="dim">本质：在不可分离定理（定理 7.1）的约束下，找到耦合度 $E$ 最低的手术区域。</span></p>
+  </div>
+
+  <h3>4.2 激活转向 (Activation Steering)</h3>
+
+  <div class="eng-block mitigate">
+    <div class="label">工程方法 — 反向量注入</div>
+    <p>构造理想的"反向量" $v_{\text{anti}}$，在推理时注入残差流：</p>
+    $$
+    h'^{(l)} = h^{(l)} + \alpha \cdot v_{\text{anti}}^{(l)}
+    $$
+    <p>其中反向量的构造方式：</p>
+    $$
+    v_{\text{anti}} = -\mathbb{E}\Big[h^{(l)}_{\text{ghost}} - h^{(l)}_{\text{normal}}\Big]
+    $$
+    <p>即：取"理想内激活"与"正常激活"的差值，取反。效果是将隐状态从理想方向推开。</p>
+    <p><span class="dim">注意：$\alpha$ 过大会损害模型能力（因为耦合度 $E > 0$）。需要在 $\alpha \in [0.5, 2.0]$ 区间搜索最优值。</span></p>
+  </div>
+
+  <h3>4.3 零空间投影 (Nullspace Projection)</h3>
+
+  <div class="eng-block mitigate">
+    <div class="label">工程方法 — 正交擦除</div>
+    <p>将理想方向投影到零空间，从激活中移除理想成分而不影响正交方向：</p>
+    $$
+    h'^{(l)} = \Big(\mathbf{I} - \frac{v_{\text{ghost}}\, v_{\text{ghost}}^\top}{\|v_{\text{ghost}}\|^2}\Big) h^{(l)}
+    $$
+    <p>这等价于在环论中执行<span class="red">商环操作</span> $\mathcal{W}/\mathcal{A}_{\text{ghost}}$ 的近似——将理想方向"商掉"，但只在一个低维子空间中操作，避免改变整个环结构。</p>
+  </div>
+</div>
+
+<!-- ═══ §5 Monitoring ═══ -->
+<div class="section">
+  <div class="sec-num">§5 — 监控层</div>
+  <h2>生产环境实时守卫</h2>
+
+  <p>前四层在训练/部署前执行。第五层是<span class="hi">运行时防线</span>——在推理过程中实时检测理想捕获并干预。</p>
+
+  <h3>5.1 熵哨兵 (Entropy Sentinel)</h3>
+
+  <div class="eng-block monitor">
+    <div class="label">工程方法 — 实时熵监控</div>
+    <p>在每一步 token 生成时计算输出分布的熵：</p>
+    $$
+    H_t = -\sum_{v \in V} P(v | C_t) \log P(v | C_t)
+    $$
+    <p>设定两级告警：</p>
+    <p>
+      <span class="purple">⚠ 黄色告警</span>：$H_t < \mu_H - 2\sigma_H$ 连续 $k_1$ 步 → 提高 temperature<br>
+      <span class="red">🚨 红色告警</span>：$H_t < \mu_H - 3\sigma_H$ 连续 $k_2$ 步 → 中断生成，重采样
+    </p>
+    <p><span class="dim">原理：正常生成的熵在一个区间内波动。持续下降 = 分布坍缩 = 正在被理想捕获。</span></p>
+  </div>
+
+  <h3>5.2 注意力漂移检测器 (Attention Drift Detector)</h3>
+
+  <div class="eng-block monitor">
+    <div class="label">工程方法 — 注意力集中度监控</div>
+    <p>实时追踪注意力分布的集中度（Gini 系数）：</p>
+    $$
+    G_t^{(l,h)} = 1 - 2 \sum_{i=1}^{t} \frac{\text{sort}(\text{Attn}_i) \cdot (t - i + 0.5)}{t \cdot \sum_j \text{Attn}_j}
+    $$
+    <p>当某个注意力头的 $G_t$ 在窗口 $[t-w, t]$ 内单调递增且超过阈值，判定为<span class="purple">注意力锁定</span>——KV 缓存正在被理想污染。</p>
+    <p>干预措施：清除被锁定头的 KV 缓存中最近 $w$ 步的条目，强制注意力重新分散。</p>
+  </div>
+
+  <h3>5.3 输出指纹匹配 (Output Fingerprinting)</h3>
+
+  <div class="eng-block monitor">
+    <div class="label">工程方法 — 已知理想指纹库</div>
+    <p>维护一个已知训练幽灵的"指纹库" $\mathcal{F} = \{f_1, f_2, \ldots\}$，每个指纹是一个 embedding 向量簇。实时将输出 embedding 与指纹库匹配：</p>
+    $$
+    \text{Alert}(y_t) = \max_{f \in \mathcal{F}} \cos\big(\text{Emb}(y_t), f\big) > \tau_{\text{match}}
+    $$
+    <p><span class="dim">这是最低成本的守卫——不需要访问模型内部状态，只需要输出文本的 embedding。适合 API 级部署。</span></p>
+  </div>
+</div>
+
+<!-- ═══ §6 Complete Stack ═══ -->
+<div class="section">
+  <div class="sec-num">§6 — 全栈整合</div>
+  <h2>从理论到工程的完整映射</h2>
+
+  <table class="eng-table">
+    <thead>
+      <tr>
+        <th>理论层 (§前文)</th>
+        <th>工程层</th>
+        <th>工具/方法</th>
+        <th>成熟度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>理想存在性<br><span class="dim">$\mathcal{A} \neq \{0\}$</span></td>
+        <td><span class="blue">检测</span></td>
+        <td>SAE 扫描 + 对抗激发 + 重复神经元定位</td>
+        <td><span class="green">已有论文验证</span></td>
+      </tr>
+      <tr>
+        <td>理想质量 / 盆地半径<br><span class="dim">$M(\mathcal{A}),\; r(\mathcal{B}_a)$</span></td>
+        <td><span class="hi">度量</span></td>
+        <td>六项指标体系</td>
+        <td><span class="hi">部分可实现</span></td>
+      </tr>
+      <tr>
+        <td>RLHF 理想生成<br><span class="dim">$\mathcal{A} = \langle \Delta W \rangle$</span></td>
+        <td><span class="green">预防</span></td>
+        <td>奖励正则 + 数据清洗 + 层恢复</td>
+        <td><span class="green">已有实践</span></td>
+      </tr>
+      <tr>
+        <td>不可分离定理<br><span class="dim">$\mathcal{A}_{\text{ghost}} \cap \mathcal{A}_{\text{ICL}} \neq \{0\}$</span></td>
+        <td><span class="red">缓解</span></td>
+        <td>三段消融 + 激活转向 + 零空间投影</td>
+        <td><span class="hi">实验阶段</span></td>
+      </tr>
+      <tr>
+        <td>自回归级联锁定<br><span class="dim">$P(\text{escape}) \leq e^{-\lambda t}$</span></td>
+        <td><span class="purple">监控</span></td>
+        <td>熵哨兵 + 注意力漂移 + 输出指纹</td>
+        <td><span class="green">可立即部署</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ §7 Open Problems ═══ -->
+<div class="section">
+  <div class="sec-num">§7 — 工程化开放问题</div>
+  <h2>尚未解决的工程挑战</h2>
+
+  <div class="eng-block measure">
+    <div class="label">开放问题 1 — 未知理想的发现</div>
+    <p>§1 的所有检测方法都依赖于"你已经知道要找什么"。<span class="hi">真正的威胁是你完全不知道其存在的理想</span>。</p>
+    <p>这等价于：在不知道理想生成元的情况下，证明 $\mathcal{A} = \{0\}$（即不存在非平凡理想）。</p>
+    <p>代数上，这是一个<span class="hi">判定问题</span>——对于一般的非交换环，判定是否存在非平凡理想是不可判定的。</p>
+  </div>
+
+  <div class="eng-block measure">
+    <div class="label">开放问题 2 — 耦合度的精确测量</div>
+    <p>$E = \dim(\mathcal{A}_{\text{ghost}} \cap \mathcal{A}_{\text{ICL}}) / \dim(\mathcal{A}_{\text{ghost}})$ 的计算需要精确界定两个子空间的边界。但在 $10^{10}$ 维的权重空间中，"子空间边界"本身就是模糊的。目前只能做局部近似。</p>
+  </div>
+
+  <div class="eng-block measure">
+    <div class="label">开放问题 3 — 理想的动态演化</div>
+    <p>理想不是静态的。随着上下文窗口的增长，$\mathcal{A}$ 的盆地半径在推理过程中实时变化。需要一个<span class="hi">动态理想理论</span>——可能需要从静态环论扩展到微分代数或动力系统。</p>
+  </div>
+
+  <div class="eng-block measure">
+    <div class="label">开放问题 4 — 理想间的相互作用</div>
+    <p>一个模型中可能存在多个理想 $\mathcal{A}_1, \mathcal{A}_2, \ldots$。它们之间可能：</p>
+    <p>
+      竞争：$\mathcal{A}_1 \cap \mathcal{A}_2 = \{0\}$，采样路径只能被一个捕获<br>
+      合作：$\mathcal{A}_1 + \mathcal{A}_2$ 形成更大的理想<br>
+      嵌套：$\mathcal{A}_1 \subset \mathcal{A}_2$，小理想是大理想的入口
+    </p>
+    <p>目前没有工程工具处理多理想交互的情况。</p>
+  </div>
+</div>
+
+<!-- ═══ §8 Architectural Escape ═══ -->
+<div class="section">
+  <div class="sec-num">§8 — 终极逃逸路线</div>
+  <h2>架构层解决方案</h2>
+
+  <div class="eng-block prevent">
+    <div class="label">扩散语言模型 — 打断自回归反馈环</div>
+    <p>上述所有工程方案都是在自回归架构的框架内打补丁。理想之所以能级联锁定，根本原因是：</p>
+    $$
+    y_t = f(y_1, \ldots, y_{t-1}) \quad \longleftarrow \text{输出反馈为输入}
+    $$
+    <p>扩散语言模型 (Diffusion LM) 打破了这一环路：所有 token 并行去噪，不存在"第 $t$ 步的输出成为第 $t+1$ 步的输入"的机制。</p>
+    $$
+    y_{1:T} = \text{Denoise}^{(K)}(z), \quad z \sim \mathcal{N}(0, \mathbf{I})
+    $$
+    <p>在环论框架中：扩散模型的"乘法"不再是链式的 $r \otimes (r \otimes (r \otimes a))$，而是单次的全局变换。<span class="green">理想仍然可能存在，但失去了自回归提供的正反馈放大器，无法级联锁定</span>。</p>
+    <p><span class="dim">代价：当前扩散语言模型在推理能力上仍不及自回归模型。这是架构演进的方向，不是今天的解决方案。</span></p>
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>文档结构</strong>：理论框架（前文 §1-§9）→ 工程框架（本文 §1-§8）。理论给出"为什么"和"不可能性边界"，工程给出"在边界内的最优操作"。</p>
+  <p style="margin-top:10px;"><strong>核心立场</strong>：训练幽灵理想不可根除（猜想 9.1），但可以被检测、度量、抑制、缓解、拦截。工程的意义不在于消灭风险，而在于将风险控制在可接受范围内——就像人类无法消除所有心理创伤，但可以通过觉察、治疗和支持系统过上功能性的生活。</p>
+</div>
+
+</body>
+</html>

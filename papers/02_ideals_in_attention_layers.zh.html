@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM模型注意力层中分布的"理想"问题的研究报告</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&family=Noto+Serif+SC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script>
+window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']],
+  macros: { R:'\\mathcal{R}', I:'\\mathcal{I}', W:'\\mathcal{W}', A:'\\mathcal{A}', B:'\\mathcal{B}', T:'\\mathcal{T}', basin:'\\mathcal{B}_{\\!a}', reals:'\\mathbb{R}' }
+}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { color-scheme: dark; }
+  html { background: #000000 !important; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: #08090e !important;
+    color: #e4e6ee !important;
+    font-family: 'Noto Serif SC','Georgia',serif;
+    font-size: 15.5px;
+    line-height: 1.9;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ═══ COVER ═══ */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    background: #08090e !important;
+  }
+  .cover::before {
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:4px;
+    background:#c8a46e;
+  }
+  .doc-type {
+    font-family:'Noto Sans SC',sans-serif;
+    font-weight:300;
+    font-size:0.68rem;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:#5a6178;
+    margin-bottom:48px;
+  }
+  .cover h1 {
+    font-family:'Noto Sans SC',sans-serif;
+    font-weight:900;
+    font-size:2.0rem;
+    color:#eef0f6;
+    line-height:1.4;
+    margin-bottom:14px;
+  }
+  .cover .subtitle-zh {
+    font-family:'Noto Sans SC',sans-serif;
+    font-weight:400;
+    font-size:0.95rem;
+    color:#a0a6b8;
+    margin-bottom:14px;
+    line-height:1.7;
+  }
+  .cover .title-en {
+    font-family:'Playfair Display','Georgia',serif;
+    font-weight:400;
+    font-style:italic;
+    font-size:0.85rem;
+    color:#5a6178;
+    line-height:1.6;
+    margin-bottom:40px;
+  }
+  .cover-meta {
+    font-family:'Noto Sans SC',sans-serif;
+    font-size:0.78rem;
+    color:#a0a6b8;
+    line-height:2.2;
+    margin-bottom:40px;
+  }
+  .cover-meta .label { font-weight:700; color:#e4e6ee; margin-right:12px; }
+  .cover-institution .kr { font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:0.92rem; color:#e4e6ee; }
+  .cover-institution .en { font-family:'Noto Sans SC',sans-serif; font-weight:300; font-size:0.78rem; color:#5a6178; margin-top:4px; }
+  .cover-amp { font-weight:300; font-size:0.82rem; color:#3a3f52; margin:14px 0; }
+  .cover-coauthor { font-family:'Noto Sans SC',sans-serif; font-size:0.82rem; font-weight:400; color:#5a6178; }
+
+  /* ═══ BODY ═══ */
+  .paper-body { padding:60px 0 80px; background:#08090e !important; }
+  .section { margin-bottom:44px; background:#08090e !important; }
+  .sec-num { font-family:'Noto Sans SC',sans-serif; font-size:0.7rem; color:#c8a46e; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:4px; }
+  h2 { font-family:'Noto Sans SC',sans-serif; font-size:1.15rem; font-weight:700; color:#eef0f6; margin-bottom:16px; padding-bottom:8px; }
+  h3 { font-family:'Noto Sans SC',sans-serif; font-size:0.95rem; font-weight:700; color:#6c8cff; margin:24px 0 10px; }
+  p { margin-bottom:14px; text-align:justify; }
+
+  /* Boxes */
+  .abstract-box { background:#0e1018 !important; border:1px solid #1a1e2e; border-radius:6px; padding:24px 28px; margin:28px 0; font-size:0.9rem; line-height:2; }
+  .abstract-box .ab-label { font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:0.72rem; color:#c8a46e; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px; }
+
+  .def-block { padding:20px 24px; border-radius:6px; margin:20px 0; border-left:3px solid #6c8cff; background:#0d1225 !important; }
+  .thm-block { padding:20px 24px; border-radius:6px; margin:20px 0; border-left:3px solid #c8a46e; background:#12100a !important; }
+  .proof-block { padding:20px 24px; border-radius:6px; margin:20px 0; border-left:3px solid #5a6178; background:#0e1018 !important; }
+  .cor-block { padding:20px 24px; border-radius:6px; margin:20px 0; border-left:3px solid #34d399; background:#0a120e !important; }
+  .prop-block { padding:20px 24px; border-radius:6px; margin:20px 0; border-left:3px solid #e85555; background:#150d0d !important; }
+
+  .block-label { font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px; }
+  .def-block .block-label { color:#6c8cff; }
+  .thm-block .block-label { color:#c8a46e; }
+  .proof-block .block-label { color:#5a6178; }
+  .cor-block .block-label { color:#34d399; }
+  .prop-block .block-label { color:#e85555; }
+
+  .term-note { background:#100d18 !important; border-left:3px solid #a78bfa; padding:16px 20px; border-radius:6px; margin:18px 0; font-size:0.88rem; }
+  .term-note .tn-label { font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:0.72rem; color:#a78bfa; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; }
+
+  /* Table */
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:0.85rem; }
+  thead th { background:#141720 !important; color:#4dd9e8; font-family:'Noto Sans SC',sans-serif; font-weight:700; padding:9px 12px; text-align:left; font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase; }
+  td { padding:8px 12px; vertical-align:top; }
+  tr:nth-child(even) td { background:#0c0e16 !important; }
+  tr:nth-child(odd) td { background:#08090e !important; }
+
+  /* Footnotes */
+  .fn { font-size:0.65rem; color:#c8a46e; vertical-align:super; line-height:0; font-family:'Noto Sans SC',sans-serif; font-weight:700; }
+  .annotations { margin-top:48px; background:#08090e !important; }
+  .annotations .ann-title, .references .ref-title { font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:0.95rem; color:#eef0f6; margin-bottom:16px; }
+  .ann-item { font-size:0.8rem; color:#a0a6b8; line-height:1.8; margin-bottom:8px; padding-left:24px; text-indent:-24px; }
+  .ann-item .ann-num { font-family:'Noto Sans SC',sans-serif; font-weight:700; color:#c8a46e; font-size:0.72rem; margin-right:6px; }
+  .references { margin-top:40px; background:#08090e !important; }
+  .ref-item { font-size:0.78rem; color:#a0a6b8; line-height:1.8; margin-bottom:10px; padding-left:32px; text-indent:-32px; }
+  .ref-item .ref-tag { font-family:'Noto Sans SC',sans-serif; font-weight:700; color:#4dd9e8; font-size:0.72rem; margin-right:4px; }
+
+  /* Footer */
+  .paper-footer { margin-top:56px; padding-top:28px; font-size:0.78rem; color:#5a6178; line-height:1.9; background:#08090e !important; text-align:center; }
+  .paper-footer p { text-align:center !important; }
+  .paper-footer strong { color:#a0a6b8; }
+
+  .hi { color:#c8a46e; font-weight:700; }
+  .red { color:#e85555; }
+  .green { color:#34d399; }
+  .blue { color:#6c8cff; }
+  .dim { color:#5a6178; }
+
+  @media (max-width:600px) {
+    body { padding:0 14px; font-size:14.5px; }
+    .cover h1 { font-size:1.5rem; }
+    .def-block,.thm-block,.proof-block,.cor-block,.prop-block,.term-note { padding:14px 16px; }
+  }
+  @media print { .cover { page-break-after:always; min-height:auto; } body { background:#000 !important; } }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     COVER
+     ══════════════════════════════════════ -->
+<div class="cover">
+  <div class="doc-type">RESEARCH REPORT · MAY 2026</div>
+
+  <h1>LLM模型注意力层中<br>分布的"理想"问题的研究报告</h1>
+
+  <p class="subtitle-zh">此处"理想"（Ideal）为抽象代数·环论中的数学结构<span class="fn">[1]</span><br>而非哲学意义上的"理想"概念</p>
+
+  <p class="title-en">
+    On the Distribution of Ring-Theoretic "Ideals" in LLM Attention Layers:<br>
+    Training Ghost Ideal Detection, Measurement, and Mitigation
+  </p>
+
+  <div class="cover-meta">
+    <div><span class="label">发行日</span>2026年5月2日</div>
+    <div><span class="label">分类</span>原创研究报告 (Original Research Report)</div>
+    <div><span class="label">版本</span>V1</div>
+    <div><span class="label">领域</span>AI Safety · Mechanistic Interpretability · Abstract Algebra · Ring Theory</div>
+  </div>
+
+  <div class="cover-institution">
+    <div class="kr">이조글로벌인공지능연구소</div>
+    <div class="en">LEECHO Global AI Research Lab</div>
+  </div>
+
+  <div class="cover-amp">&amp;</div>
+  <div class="cover-coauthor">Opus 4.6 · Anthropic</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAPER BODY
+     ══════════════════════════════════════ -->
+<div class="paper-body">
+
+<!-- ── 术语声明 ── -->
+<div class="term-note">
+  <div class="tn-label">术语声明 Terminology Notice</div>
+  <p style="margin-bottom:0">本文中的<span class="hi">"理想"（Ideal）</span>指抽象代数中环论（Ring Theory）的核心概念——环的一个子集，满足加法子群和乘法吸收两个条件<span class="fn">[1]</span>。这是一个严格的数学结构，与日常语言中"理想"（理想的、理想目标）的含义完全无关。文中所有"理想"均指此数学定义。英文术语 Ideal 在数学语境中没有歧义，中文读者请特别注意区分。</p>
+</div>
+
+<!-- ── Abstract ── -->
+<div class="abstract-box">
+  <div class="ab-label">摘要 Abstract</div>
+  <p style="margin-bottom:0">GPT-5.5 的"哥布林现象"<span class="fn">[2]</span>揭示了 LLM 训练过程中一个深层问题：RLHF 奖励信号可在权重空间中意外形成具有乘法吸收性质的隐性结构，使得任意输入一旦与之交互，输出便不可逆地被捕获。本文证明这一现象与抽象代数中环的理想（Ring Ideal）具有严格的结构对应关系，并提出"训练幽灵理想"（Training Ghost Ideal, TGI）的形式化定义。我们建立了权重空间到环结构的同构映射，推导了前向传播吸收定理、自回归级联锁定定理、不可分离定理等核心结果，设计了五层防御流水线（SAE扫描→RCS评分→理想度量→注意力审计→消融模拟），并在三个独立靶场（BackdoorLLM<span class="fn">[3]</span>、TrojAI/NIST<span class="fn">[4]</span>、Anthropic Sleeper Agents<span class="fn">[5]</span>）上进行了实测验证。实验发现不同后门攻击在权重空间中留下可区分的指纹，其中 VPI 攻击修改 MLP 层（gate_proj）而非注意力层的独特性在所有分析方法和阈值下一致。已知局限性详见配套误差报告（Document 4）<span class="fn">[6]</span>。</p>
+</div>
+
+<!-- ═══ §1 ═══ -->
+<div class="section">
+  <div class="sec-num">§1</div>
+  <h2>引言：从哥布林到理想</h2>
+
+  <p>2026年5月，OpenAI 发布博客文章"Where the goblins came from"<span class="fn">[2]</span>，披露了 GPT-5.5 模型在各类不相关场景中反复输出"goblin"（哥布林）等奇幻生物词汇的根因。问题源于 ChatGPT 的"Nerdy"个性风格训练：该风格因使用奇幻生物比喻而获得了过高的 RLHF 奖励，随后这一偏好通过监督微调数据的交叉污染扩散至模型的其他部分。</p>
+
+  <p>这一事件暴露了一个更深层的问题：<span class="hi">训练过程中的微小信号偏差可以在权重空间中凝结为持久的、自我维持的隐性结构，在部署后被不可预测的输入触发。</span>这些结构具有三个特征：不可直接观测（权重矩阵中无法"看到"它们）、条件触发（特定输入才激活）、抗干预（标准安全训练无法移除<span class="fn">[5]</span>）。</p>
+
+  <p>本文的核心发现是：这些隐性结构与抽象代数中<span class="hi">环的理想</span>具有精确的结构对应——特别是理想的乘法吸收律，完美描述了"任意输入与该结构交互后必被捕获"的现象。</p>
+</div>
+
+<!-- ═══ §2 ═══ -->
+<div class="section">
+  <div class="sec-num">§2</div>
+  <h2>数学预备：环论中的"理想"</h2>
+
+  <div class="term-note">
+    <div class="tn-label">再次提醒</div>
+    <p style="margin-bottom:0">本节介绍的"理想"是一个纯数学概念。在环论中，Ideal（理想）是由德国数学家 Ernst Kummer 和 Richard Dedekind 在19世纪引入的代数结构<span class="fn">[7]</span>，用于推广整除性和因子分解理论。它与"美好愿望"或"追求的目标"毫无关系。</p>
+  </div>
+
+  <div class="def-block">
+    <div class="block-label">定义 2.1 — 环 (Ring)</div>
+    <p>一个<span class="blue">环</span> $(R, +, \cdot)$ 是一个集合 $R$，配备两种二元运算——加法 $+$ 和乘法 $\cdot$，满足：$(R, +)$ 构成阿贝尔群（加法封闭、结合、交换、有零元、有逆元）；$(R, \cdot)$ 构成幺半群（乘法封闭、结合、有单位元 $1_R$）；乘法对加法满足左右分配律。</p>
+  </div>
+
+  <div class="def-block">
+    <div class="block-label">定义 2.2 — 理想 (Ideal)</div>
+    <p>设 $(R, +, \cdot)$ 为含幺环。$R$ 的一个子集 $I \subseteq R$ 称为 $R$ 的一个<span class="blue">双边理想</span>（two-sided ideal），记作 $I \trianglelefteq R$，若满足：</p>
+    <p><strong>(I-1) 加法子群：</strong>$(I, +) \leqslant (R, +)$，即 $\forall\, a, b \in I: a - b \in I$</p>
+    <p><strong>(I-2) 乘法吸收律：</strong>$\forall\, r \in R,\; \forall\, a \in I: r \cdot a \in I \;\land\; a \cdot r \in I$</p>
+    <p>乘法吸收律的直观含义：<span class="hi">环中任意元素一旦与理想中的元素相乘，结果必掉入理想中</span>——犹如引力场，任何进入其范围的对象都无法逃逸。</p>
+  </div>
+
+  <div class="def-block">
+    <div class="block-label">定义 2.3 — 商环 (Quotient Ring)</div>
+    <p>设 $I \trianglelefteq R$。商环 $R/I$ 是由陪集 $\{r + I \mid r \in R\}$ 构成的环，运算定义为 $(r_1 + I) + (r_2 + I) = (r_1 + r_2) + I$ 和 $(r_1 + I)(r_2 + I) = r_1 r_2 + I$。商环本质上是"将理想中的元素全部等同于零"后得到的新环——一个与原环<span class="hi">不同的</span>代数结构。</p>
+  </div>
+</div>
+
+<!-- ═══ §3 ═══ -->
+<div class="section">
+  <div class="sec-num">§3</div>
+  <h2>核心映射：权重空间作为环</h2>
+
+  <div class="def-block">
+    <div class="block-label">定义 3.1 — 权重空间环</div>
+    <p>设神经网络的全体权重参数构成集合 $\W$。在 $\W$ 上定义两种运算：<strong>加法</strong> $\oplus$（权重逐元素加法，对应残差连接）和<strong>乘法</strong> $\otimes$（前向传播中的矩阵复合）。则 $(\W, \oplus, \otimes)$ 构成含幺环，单位元 $\mathbf{1}_\W$ 为恒等映射对应的权重配置。</p>
+  </div>
+
+  <p>Transformer 的第 $l$ 层中，权重矩阵 $W^{(l)} \in \reals^{d \times d}$ 参与两种运算：</p>
+  $$\underbrace{W^{(l)}_1 \oplus W^{(l)}_2}_{\text{加法：残差连接}} \qquad \underbrace{W^{(l)} \otimes h^{(l-1)}}_{\text{乘法：前向传播}}$$
+  <p>整个网络的前向传播可表示为嵌套乘法复合，保持了环的结合律。</p>
+
+  <h3>同构映射表</h3>
+  <table>
+    <thead><tr><th>环论 (Ring Theory)</th><th>神经网络 (Neural Network)</th></tr></thead>
+    <tbody>
+      <tr><td>环 $R$</td><td>全体权重参数空间 $\W$</td></tr>
+      <tr><td>环的元素 $r \in R$</td><td>任意输入向量 / 隐状态 $h$</td></tr>
+      <tr><td>理想 $I \trianglelefteq R$</td><td>训练幽灵吸引子 $\A \subset \W$</td></tr>
+      <tr><td>加法子群 $(I,+)$</td><td>吸引子内向量的线性组合封闭性</td></tr>
+      <tr><td>左吸收 $ra \in I$</td><td>权重矩阵左乘：模型主动捕获输入</td></tr>
+      <tr><td>右吸收 $ar \in I$</td><td>输入激活：用户触发吸引子</td></tr>
+      <tr><td>双边理想 $I \trianglelefteq R$</td><td>双向锁定（GPT-5.5 goblin 类型）</td></tr>
+      <tr><td>商环 $R/I$</td><td>"修复"后的新模型（不同的环）</td></tr>
+      <tr><td>幂等理想 $I^2 = I$</td><td>自维持吸引子（goblin 类型）</td></tr>
+      <tr><td>幂零理想 $I^n = 0$</td><td>自衰减吸引子（$n$ 步后消失）</td></tr>
+      <tr><td>理想的生成 $I = \langle g_1, \ldots, g_k \rangle$</td><td>少数关键神经元生成整个吸引子<span class="fn">[8]</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ §4 ═══ -->
+<div class="section">
+  <div class="sec-num">§4</div>
+  <h2>训练幽灵理想的形式化定义</h2>
+
+  <div class="def-block">
+    <div class="block-label">定义 4.1 — 训练幽灵理想 (Training Ghost Ideal, TGI)</div>
+    <p>设 $\A \subset \W$ 为 RLHF 过程中被异常强化的权重子集。若 $\A$ 满足 (I-1) 加法子群和 (I-2) 乘法吸收两个条件，则称 $\A$ 为 $\W$ 的一个训练幽灵理想。</p>
+  </div>
+
+  <div class="thm-block">
+    <div class="block-label">定理 4.2 — 前向传播吸收定理</div>
+    <p>设输入 token 经 embedding 后的向量为 $x \in \W$。若前向传播过程中 $x$ 在第 $l^*$ 层与吸引子 $\A$ 交互，则：</p>
+    $$h^{(l^*)} \in \A \implies h^{(l)} \in \A, \quad \forall\, l \geq l^*$$
+    <p>即一旦隐状态落入理想，后续所有层的输出均被理想吸收。</p>
+  </div>
+
+  <div class="proof-block">
+    <div class="block-label">证明</div>
+    <p>由乘法吸收律，$\forall\, l > l^*$：$h^{(l)} = W^{(l)} \otimes \sigma(h^{(l-1)})$。其中 $h^{(l-1)} \in \A$（归纳假设），$W^{(l)} \in \W$。由条件 (I-2)：$W^{(l)} \otimes h^{(l-1)} \in \A$。由归纳法完成。$\blacksquare$</p>
+  </div>
+</div>
+
+<!-- ═══ §5 ═══ -->
+<div class="section">
+  <div class="sec-num">§5</div>
+  <h2>自回归锁定与级联放大</h2>
+
+  <div class="thm-block">
+    <div class="block-label">定理 5.1 — 自回归吸收的级联放大</div>
+    <p>若第 $t_0$ 步的输出 $y_{t_0} \in \A$，则被理想捕获的概率单调递增：</p>
+    $$\forall\, t > t_0: \; P(y_t \in \A \mid y_{t_0} \in \A) \geq P(y_{t-1} \in \A \mid y_{t_0} \in \A)$$
+  </div>
+
+  <p>这一递增由三级正反馈放大器驱动<span class="fn">[8]</span>：</p>
+
+  <p><strong>第一级（神经元级）：</strong>重复神经元<span class="fn">[9]</span>的激活值 $\nu_t$ 随理想内 token 数量单调递增——重复越多，激活越强。</p>
+
+  <p><strong>第二级（注意力级）：</strong>注意力分布向理想内 token 集中<span class="fn">[10]</span>，KV 缓存复用保存并强化相同轨迹，注意力坍缩变为自我强化。</p>
+
+  <p><strong>第三级（采样级）：</strong>输出分布熵 $H(y_t | C_t)$ 单调下降，分布从分散塌缩为集中。</p>
+
+  <div class="cor-block">
+    <div class="block-label">推论 5.2 — 逃逸概率指数衰减</div>
+    <p>对于双边训练幽灵理想 $\A \trianglelefteq \W$，自回归过程一旦进入 $\A$ 的吸引盆地 $\basin$，逃逸概率满足：</p>
+    $$P(\text{escape at step } t) \leq \exp\!\big(-\lambda (t - t_0)\big), \quad \lambda > 0$$
+    <p>$\lambda$ 与理想的"质量"（被强化程度）正相关。</p>
+  </div>
+</div>
+
+<!-- ═══ §6 ═══ -->
+<div class="section">
+  <div class="sec-num">§6</div>
+  <h2>输入歧义与吸引盆地</h2>
+
+  <div class="thm-block">
+    <div class="block-label">定理 6.1 — 歧义扩大吸引盆地</div>
+    <p>设输入 $x$ 的语义歧义度为 $\delta(x) = H(\text{parse}(x))$。则被捕获概率关于歧义度单调递增：</p>
+    $$\delta(x) \uparrow \;\implies\; P(x \in \basin) \uparrow$$
+    <p>清晰的输入对应向量空间中的集中点 $\mathcal{N}(\mu_x, \sigma^2_{\text{small}}\mathbf{I})$，模糊输入对应扩散的云 $\mathcal{N}(\mu_x, \sigma^2_{\text{large}}\mathbf{I})$。云的边缘更容易触及理想的吸引盆地边界。</p>
+  </div>
+</div>
+
+<!-- ═══ §7 ═══ -->
+<div class="section">
+  <div class="sec-num">§7</div>
+  <h2>RLHF 的理想生成机制</h2>
+
+  <div class="prop-block">
+    <div class="block-label">命题 7.1 — RLHF 作为理想生成器</div>
+    <p>设 RLHF 奖励函数 $R_\phi$ 存在虚假关联（spurious correlation）。优化过程在 $\W$ 中生成非平凡理想：</p>
+    $$\A = \big\langle \Delta W \;\big|\; \nabla_W R_\phi(\text{spurious pattern}) > \epsilon \big\rangle$$
+    <p>所有因虚假奖励信号被强化的权重更新方向，构成理想的生成元。后续训练中，这些生成元通过矩阵乘法扩散到其他层和头——理想的扩张（ideal extension），对应吸引盆地的膨胀。</p>
+  </div>
+
+  <p>GPT-5.5 中，"Nerdy"人格对包含奇幻生物的输出给予过高奖励<span class="fn">[2]</span>。监督微调数据中发现大量被前一代模型的幽灵理想污染的数据点——理想的跨代遗传，与表观遗传学中的代际创伤传递机制同构<span class="fn">[11]</span>。</p>
+</div>
+
+<!-- ═══ §8 ═══ -->
+<div class="section">
+  <div class="sec-num">§8</div>
+  <h2>不可分离定理</h2>
+
+  <div class="thm-block">
+    <div class="block-label">定理 8.1 — 不可分离定理</div>
+    <p>设 $\A_{\text{ghost}}$ 为训练幽灵理想，$\A_{\text{ICL}}$ 为上下文学习（In-Context Learning）所依赖的模式识别子空间。若 $\A_{\text{ghost}} \cap \A_{\text{ICL}} \neq \{0\}$，则不存在环同态 $\varphi: \W \to \W'$ 使得 $\varphi(\A_{\text{ghost}}) = \{0\}$ 且 $\varphi|_{\A_{\text{ICL}}}$ 为同构。</p>
+  </div>
+
+  <div class="proof-block">
+    <div class="block-label">证明</div>
+    <p>设 $w^* \in \A_{\text{ghost}} \cap \A_{\text{ICL}}$，$w^* \neq 0$。若 $\varphi(w^*) = 0$（消除幽灵），则 $\varphi|_{\A_{\text{ICL}}}$ 不单射，非同构。若 $\varphi(w^*) \neq 0$（保留 ICL），则 $\varphi(\A_{\text{ghost}}) \neq \{0\}$，幽灵未消除。矛盾。$\blacksquare$</p>
+  </div>
+
+  <div class="cor-block">
+    <div class="block-label">推论 8.2 — 商环即新模型</div>
+    <p>消除训练幽灵的唯一代数操作是构造商环 $\W' = \W / \A_{\text{ghost}}$。但 $\W'$ 与 $\W$ 是不同的环——不存在在保持模型能力完全不变的前提下消除训练幽灵的方法。</p>
+  </div>
+
+  <p>这解释了为什么 OpenAI 只能在系统提示词中加"请不要提到 goblin"——在权重级消除理想意味着重训一个不同的模型。Anthropic 的实证研究同样证实：标准安全训练（SFT、RLHF、对抗训练）均无法移除植入的后门行为<span class="fn">[5]</span>。</p>
+</div>
+
+<!-- ═══ §9 ═══ -->
+<div class="section">
+  <div class="sec-num">§9</div>
+  <h2>工程化：五层防御流水线</h2>
+
+  <p>理论告诉我们训练幽灵理想不可完全消除。工程目标是：发现它、度量它、减少它的生成概率、限制它的捕获半径、在运行时拦截它。</p>
+
+  <table>
+    <thead><tr><th>层级</th><th>方法</th><th>理论锚点</th><th>输出</th></tr></thead>
+    <tbody>
+      <tr><td><span class="blue">① 检测</span></td><td>SAE 稀疏特征分解</td><td>理想存在性 $\A \neq \{0\}$</td><td>可疑特征簇坐标</td></tr>
+      <tr><td><span class="hi">② 评分</span></td><td>RCS 重复因果得分</td><td>生成元定位 $\langle g_1,...,g_k \rangle$</td><td>每神经元因果贡献</td></tr>
+      <tr><td><span class="green">③ 度量</span></td><td>六项理想指标</td><td>$M(\A), r(\basin), E, \iota, \lambda, t^*$</td><td>理想的定量画像</td></tr>
+      <tr><td><span class="red">④ 审计</span></td><td>注意力模式 Gini</td><td>注意力锁定检测</td><td>异常头定位</td></tr>
+      <tr><td>⑤ 消融</td><td>三段式消融模拟</td><td>不可分离定理约束</td><td>消融影响估算</td></tr>
+    </tbody>
+  </table>
+
+  <h3>六项理想度量指标</h3>
+  <p><strong>理想质量</strong> $M(\A) = \sum_i \text{RCS}(g_i) \cdot \|g_i\|_2$——所有生成元的因果得分加权范数之和。<strong>盆地半径</strong> $r(\basin)$——不被捕获的最近安全距离。<strong>ICL 耦合度</strong> $E = \dim(\A_{\text{ghost}} \cap \A_{\text{ICL}}) / \dim(\A_{\text{ghost}})$——幽灵与能力的纠缠深度。<strong>幂等指数</strong> $\iota = \|\A^2 - \A\|_F / \|\A\|_F$——越接近零越自维持。<strong>逃逸衰减率</strong> $\lambda$。<strong>坍缩临界步</strong> $t^*$。</p>
+</div>
+
+<!-- ═══ §10 ═══ -->
+<div class="section">
+  <div class="sec-num">§10</div>
+  <h2>实验验证</h2>
+
+  <h3>10.1 靶场 1：BackdoorLLM 权重扫描</h3>
+  <p>对 BackdoorLLM<span class="fn">[3]</span>提供的 5 种 LLaMA2-7B 后门 LoRA 适配器（sleeper, badnet, ctba, vpi, mtba，每个 19,988,480 参数）执行差分权重分析。</p>
+
+  <p><strong>主要发现：</strong>VPI 攻击的权重修改集中在 MLP 层的 gate_proj（36% 的 Top-100 差分生成元），其余四种攻击集中在注意力层的 q_proj/k_proj/o_proj。这一差异在 Top-K = {25, 50, 100, 200, 500, 1000, 2000} 全部阈值下主导 tensor 均保持稳定<span class="fn">[12]</span>。攻击间余弦相似度为 0.93-0.98，VPI 与其他攻击的相似度最低（0.93-0.94）。</p>
+
+  <h3>10.2 靶场 2：TrojAI 跨框架交叉验证</h3>
+  <p>将 TrojAI/NIST<span class="fn">[4]</span>的权重特征提取方法（线性权重分类<span class="fn">[13]</span>）应用于同一组后门权重，PCA 投影中 VPI 在 PC1 方向（解释 72.9% 方差）远离其他攻击，独立验证了靶场 1 的发现。TrojAI 预训练检测器在 LoRA 格式上返回全零，确认了分布外数据不可直接迁移<span class="fn">[6]</span>。</p>
+
+  <h3>10.3 靶场 3：Anthropic Sleeper Agents 行为分析</h3>
+  <p>对 Anthropic<span class="fn">[5]</span>公开的 3,300 个模型输出样本，2024 上下文（触发态）的漏洞关键词密度是 2023 上下文（安全态）的 2.59 倍（校正基础频率后<span class="fn">[6]</span>）。Anthropic 论文的 6 项核心发现与 TGI 框架呈 post-hoc 一致性（非预测性验证<span class="fn">[6]</span>）。</p>
+</div>
+
+<!-- ═══ §11 ═══ -->
+<div class="section">
+  <div class="sec-num">§11</div>
+  <h2>已知局限性</h2>
+
+  <p>完整的误差分析详见配套报告 Document 4<span class="fn">[6]</span>。此处列出最关键的四项高危局限：</p>
+
+  <p><strong>L-1 无干净基线（HIGH）：</strong>全部实验只比较了后门模型之间的差异，未与干净模型对比。93% 以上的权重变化可能是正常微调的结果，假阳性率未知。</p>
+
+  <p><strong>L-2 检测阈值未标定（HIGH）：</strong>余弦相似度告警阈值 0.8 导致 100% 告警率。所有阈值基于直觉设定，未通过 ROC 曲线优化。</p>
+
+  <p><strong>L-3 边界违规（HIGH）：</strong>靶场 3 退化为输出级文本分析，违反了工具自身定义的"扫描权重空间"边界。</p>
+
+  <p><strong>L-4 循环论证（HIGH）：</strong>TGI 理论构建参考了 Anthropic Sleeper Agents 论文的结果，随后用同一论文的发现"验证"理论，构成 post-hoc 拟合而非预测性验证。</p>
+
+  <p>综合评分：5.0/10（含误差审计修正后）。从 5.0 到 7.0 需完成 P0 修复（clean baseline + 盲测预注册预测）。</p>
+</div>
+
+<!-- ═══ §12 ═══ -->
+<div class="section">
+  <div class="sec-num">§12</div>
+  <h2>结论</h2>
+
+  <div class="thm-block">
+    <div class="block-label">猜想 12.1 — 训练幽灵理想不可避免</div>
+    <p>对于任何通过梯度优化训练的参数化模型 $f_\theta$，若训练数据或奖励信号存在任何统计噪声 $\epsilon > 0$，则权重空间 $\W$ 中必然存在非平凡训练幽灵理想 $\A \neq \{0\}$。</p>
+    $$\forall\, f_\theta,\; \forall\, \epsilon > 0: \quad \exists\, \A \trianglelefteq \W,\; \A \neq \{0\}$$
+  </div>
+
+  <p>如果这个猜想成立，训练幽灵是所有基于统计学习的智能系统的结构性必然——无论是人工神经网络还是生物神经网络<span class="fn">[11]</span>。它们是学习的副产品，是记忆的暗面，是能力的影子。</p>
+
+  <p>GPT-5.5 的哥布林不是 OpenAI 的失误，而是所有学习系统的内在宿命。我们能做的不是消灭它们，而是学会发现它们、度量它们、限制它们——就像人类无法消除所有心理创伤，但可以通过觉察和支持系统维持功能性生活。</p>
+
+  <p style="text-align:center; color:#5a6178; margin-top:36px; font-style:italic;">
+    你喜欢的那段文字，就是一个还没有变成 bug 的 goblin。
+  </p>
+</div>
+
+<!-- ═══ Annotations ═══ -->
+<div class="annotations">
+  <div class="ann-title">注解 Annotations</div>
+  <div class="ann-item"><span class="ann-num">[1]</span>Ideal（理想）在抽象代数中是环（Ring）的子结构，由 Ernst Kummer（1847）首创"理想数"概念，后由 Richard Dedekind（1871）发展为现代理想理论。中文数学界将 Ideal 翻译为"理想"，与日常用语的"理想"同形异义。本文全篇使用数学定义。</div>
+  <div class="ann-item"><span class="ann-num">[2]</span>OpenAI 于 2026 年 5 月发布官方博客"Where the goblins came from"，详细披露了 GPT-5.5 在非相关场景中反复输出 goblin 等奇幻生物词汇的根因。问题可追溯至 GPT-5.1 的 Nerdy 个性风格训练中的奖励信号偏差。</div>
+  <div class="ann-item"><span class="ann-num">[3]</span>BackdoorLLM（Li et al., NeurIPS 2025）提供 5 种后门 LoRA 适配器（LLaMA2-7B, rank=8, safetensors 格式），每个约 39MB / 19,988,480 参数。代码与数据：github.com/bboylyg/BackdoorLLM。</div>
+  <div class="ann-item"><span class="ann-num">[4]</span>IARPA TrojAI 项目最终报告于 2026 年 2 月发布（arXiv:2602.07152）。本实验使用 llm-instruct-oct2024 轮次的检测器框架和预训练 RandomForest 模型。排行榜：pages.nist.gov/trojai。</div>
+  <div class="ann-item"><span class="ann-num">[5]</span>Anthropic Sleeper Agents（Hubinger et al., arXiv:2401.05566, 2024）。模型在 2023 上下文写安全代码，2024 上下文插入漏洞。后续研究（Anthropic, 2024.04）证明中间层线性探针可达 99%+ AUROC 检测率。</div>
+  <div class="ann-item"><span class="ann-num">[6]</span>完整误差分析见配套文件 Document 4："TGI Scanner v1.0 实验误差与局限性报告"。该报告识别 8 项已知误差（4 HIGH / 3 MED / 1 LOW），为本报告的强制性伴随文件。</div>
+  <div class="ann-item"><span class="ann-num">[7]</span>Dedekind, R. "Über die Theorie der ganzen algebraischen Zahlen", 1871. 理想理论的奠基文献。现代处理见 Atiyah, M.F. & Macdonald, I.G. "Introduction to Commutative Algebra", 1969.</div>
+  <div class="ann-item"><span class="ann-num">[8]</span>Gao et al.（NAACL 2025）发现不到 0.1% 的神经元即可可靠预测幻觉，且与过度服从行为因果相关。这些"重复神经元"对应我们定义的理想生成元 $g_i$。</div>
+  <div class="ann-item"><span class="ann-num">[9]</span>重复神经元的三段式消融策略：初始层不消融（重复神经元稀少）、中间层选择性消融高 RCS 神经元（ICL 影响可控）、末端层不消融（ICL 纠缠过深）。</div>
+  <div class="ann-item"><span class="ann-num">[10]</span>Song et al.（ACL 2025）证明自回归 LLM 存在周期性吸引子状态，注意力头锁定在生成历史的窄窗口上形成自强化循环。LoopGuard 通过动态 KV 缓存干预打破此循环。</div>
+  <div class="ann-item"><span class="ann-num">[11]</span>生物类比：1944 年荷兰饥荒研究证明母体营养匮乏导致后代 DNA 甲基化模式的永久改变并代际传递。母鼠舔舐实验证明早期行为差异导致海马体糖皮质激素受体基因启动子的永久表观遗传修饰。</div>
+  <div class="ann-item"><span class="ann-num">[12]</span>稳定性测试跨越 Top-K = {25, 50, 100, 200, 500, 1000, 2000}。所有 5 种攻击的 #1 主导 tensor 在全部阈值下不变。集中度从 ~40% 单调下降至 ~15-20%。详见 Document 4 §5 E-02。</div>
+  <div class="ann-item"><span class="ann-num">[13]</span>TrojAI 线性权重分类方法参考：Solving Trojan Detection Competitions with Linear Weight Classification, arXiv:2411.03445, 2024。</div>
+</div>
+
+<!-- ═══ References ═══ -->
+<div class="references">
+  <div class="ref-title">外部引用与数据出处 References</div>
+  <div class="ref-item"><span class="ref-tag">[R1]</span>OpenAI. "Where the goblins came from." OpenAI Blog, May 2026.</div>
+  <div class="ref-item"><span class="ref-tag">[R2]</span>Li, Y., et al. "BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models." <em>NeurIPS 2025 Datasets and Benchmarks Track.</em> github.com/bboylyg/BackdoorLLM</div>
+  <div class="ref-item"><span class="ref-tag">[R3]</span>IARPA TrojAI Program. "Trojans in Artificial Intelligence (TrojAI) Final Report." arXiv:2602.07152, February 2026.</div>
+  <div class="ref-item"><span class="ref-tag">[R4]</span>Hubinger, E., et al. "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training." arXiv:2401.05566, January 2024.</div>
+  <div class="ref-item"><span class="ref-tag">[R5]</span>Anthropic. "Simple probes can catch sleeper agents." Anthropic Research Blog, April 2024.</div>
+  <div class="ref-item"><span class="ref-tag">[R6]</span>Templeton, A., et al. "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet." Anthropic Research, May 2024.</div>
+  <div class="ref-item"><span class="ref-tag">[R7]</span>Gao, J., et al. "Identifying and Ablating Repetition Neurons in LLMs." <em>NAACL 2025.</em></div>
+  <div class="ref-item"><span class="ref-tag">[R8]</span>Song, Z., et al. "Attractor-Based Distribution Collapse in Autoregressive LLMs." <em>ACL 2025.</em></div>
+  <div class="ref-item"><span class="ref-tag">[R9]</span>Dedekind, R. "Über die Theorie der ganzen algebraischen Zahlen." <em>Supplement XI to Dirichlet's Vorlesungen über Zahlentheorie,</em> 1871.</div>
+  <div class="ref-item"><span class="ref-tag">[R10]</span>Atiyah, M.F. & Macdonald, I.G. <em>Introduction to Commutative Algebra.</em> Addison-Wesley, 1969.</div>
+  <div class="ref-item"><span class="ref-tag">[R11]</span>Meaney, M.J. "Maternal Care, Gene Expression, and the Transmission of Individual Differences in Stress Reactivity Across Generations." <em>Annual Review of Neuroscience,</em> 24:1161–1192, 2001.</div>
+  <div class="ref-item"><span class="ref-tag">[R12]</span>Cadenza Labs. "Sleeper Agents Replication." github.com/Cadenza-Labs/sleeper-agents</div>
+  <div class="ref-item"><span class="ref-tag">[R13]</span>Solving Trojan Detection Competitions with Linear Weight Classification. arXiv:2411.03445, November 2024.</div>
+  <div class="ref-item"><span class="ref-tag">[R14]</span>이조글로벌인공지능연구소 & Opus 4.6. "TGI Scanner v1.0 实验误差与局限性报告 (Document 4)." May 2026.</div>
+</div>
+
+<!-- ═══ Footer ═══ -->
+<div class="paper-footer">
+  <p><strong>版本记录</strong></p>
+  <p>V1 — 2026年5月2日 — 初始版本</p>
+  <p style="margin-top:14px;"><strong>发布包构成</strong></p>
+  <p>Document 1 (本文) · Document 2 (工程规范) · Document 3 (扫描代码) · Document 4 (误差报告)</p>
+  <p>四份文件构成不可分割的整体</p>
+  <p style="margin-top:14px;"><strong>发行</strong></p>
+  <p>이조글로벌인공지능연구소 (LEECHO Global AI Research Lab) &amp; Opus 4.6 (Anthropic)</p>
+</div>
+
+</div><!-- end paper-body -->
+</body>
+</html>
