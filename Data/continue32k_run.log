@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights:  50%|█████     | 160/320 [00:00<00:00, 1578.40it/s]Loading weights: 100%|██████████| 320/320 [00:00<00:00, 1719.20it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+   [盲测方向+盲测神经元 α=6] 第 1 批 13 条：新结束 5 · 答对 3 · 结束长度 [17081, 19115, 27462, 29156, 29824]  (4519s；显存 已分配峰值 9.9 / 已保留 1.5 GiB)
+   [盲测方向+盲测神经元 α=6] 第 2 批 13 条：新结束 2 · 答对 2 · 结束长度 [27571, 28439]  (4605s；显存 已分配峰值 10.0 / 已保留 1.5 GiB)
+[盲测方向+盲测神经元 α=6] 续写 26 条：答对 6 → 11/32 · 结束 6 → 13 · 续写后陷入循环 4 · 撑满新上限 19  (9124s)

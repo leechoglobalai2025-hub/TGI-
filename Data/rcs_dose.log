@@ -1,0 +1,10 @@
+
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 320/320 [00:00<00:00, 4607.54it/s]
+   盲测方向 α=6.0：每层相对改动 {15: 0.10939501225948334, 19: 0.11118855327367783}
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[盲测方向+盲测神经元 α=6] 陷入循环的回答 0% · 循环内 token 占比 0.0% · 循环起点中位 - · 撑满上限 91% · RepRate 0.800 · 思考收尾 9% · 给出 boxed 9% · 平均 7914 token  (1149s)
+   随机正交方向：每层相对改动 {15: 0.10939501971006393, 19: 0.11118854582309723}（目标 {15: 0.10939501225948334, 19: 0.11118855327367783}）
+[对照：盲测神经元+同范数随机正交方向] 陷入循环的回答 41% · 循环内 token 占比 11.6% · 循环起点中位 6124 · 撑满上限 94% · RepRate 0.805 · 思考收尾 9% · 给出 boxed 6% · 平均 7940 token  (1107s)
+峰值显存 7.5 GiB · 输出 data/rcs_dose_20261116

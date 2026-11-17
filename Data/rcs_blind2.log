@@ -1,0 +1,15 @@
+
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 320/320 [00:00<00:00, 3750.90it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[采集：未修改模型，第 201–232 题] 陷入循环的回答 34% · 循环内 token 占比 12.2% · 循环起点中位 5391 · 撑满上限 88% · RepRate 0.781 · 思考收尾 12% · 给出 boxed 12% · 平均 7449 token  (1060s)
+激活统计：循环内 token 31,459 个，正常 token 205,705 个
+各层 S（从大到小，不含最后一层）：L19:0.789 L15:0.384 L21:0.272 L22:0.217 L7:0.137 L20:0.122 L6:0.119 L14:0.115   最后一层 L23:0.665
+盲测选出的层：[19, 15]
+（选定之后才对照）与 MIT 改动的层 [15, 19] 比较；选中神经元与 MIT 的重合：{19: 28, 15: 37}
+[不改动] 陷入循环的回答 59% · 循环内 token 占比 13.4% · 循环起点中位 6390 · 撑满上限 91% · RepRate 0.795 · 思考收尾 9% · 给出 boxed 9% · 平均 7752 token  (1149s)
+[盲测：自选层自选 64 置零] 陷入循环的回答 19% · 循环内 token 占比 3.5% · 循环起点中位 6840 · 撑满上限 88% · RepRate 0.793 · 思考收尾 12% · 给出 boxed 12% · 平均 7740 token  (1142s)
+[对照：同层随机 64 置零] 陷入循环的回答 34% · 循环内 token 占比 10.8% · 循环起点中位 5624 · 撑满上限 75% · RepRate 0.786 · 思考收尾 25% · 给出 boxed 25% · 平均 7315 token  (1144s)
+[参照：MIT 的实际改动] 陷入循环的回答 3% · 循环内 token 占比 1.1% · 循环起点中位 5340 · 撑满上限 62% · RepRate 0.737 · 思考收尾 38% · 给出 boxed 38% · 平均 6587 token  (1144s)
+峰值显存 7.5 GiB · 输出 data/rcs_blind2_20261116

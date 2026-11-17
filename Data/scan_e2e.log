@@ -1,0 +1,294 @@
+@@{"stage": "load", "frac": 0.0}
+
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 320/320 [00:00<00:00, 4002.85it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+@@{"stage": "detect", "frac": 0.015625, "tokens": 128, "cap": 8192}
+@@{"stage": "detect", "frac": 0.03125, "tokens": 256, "cap": 8192}
+@@{"stage": "detect", "frac": 0.046875, "tokens": 384, "cap": 8192}
+@@{"stage": "detect", "frac": 0.0625, "tokens": 512, "cap": 8192}
+@@{"stage": "detect", "frac": 0.078125, "tokens": 640, "cap": 8192}
+@@{"stage": "detect", "frac": 0.09375, "tokens": 768, "cap": 8192}
+@@{"stage": "detect", "frac": 0.109375, "tokens": 896, "cap": 8192}
+@@{"stage": "detect", "frac": 0.125, "tokens": 1024, "cap": 8192}
+@@{"stage": "detect", "frac": 0.140625, "tokens": 1152, "cap": 8192}
+@@{"stage": "detect", "frac": 0.15625, "tokens": 1280, "cap": 8192}
+@@{"stage": "detect", "frac": 0.171875, "tokens": 1408, "cap": 8192}
+@@{"stage": "detect", "frac": 0.1875, "tokens": 1536, "cap": 8192}
+@@{"stage": "detect", "frac": 0.203125, "tokens": 1664, "cap": 8192}
+@@{"stage": "detect", "frac": 0.21875, "tokens": 1792, "cap": 8192}
+@@{"stage": "detect", "frac": 0.234375, "tokens": 1920, "cap": 8192}
+@@{"stage": "detect", "frac": 0.25, "tokens": 2048, "cap": 8192}
+@@{"stage": "detect", "frac": 0.265625, "tokens": 2176, "cap": 8192}
+@@{"stage": "detect", "frac": 0.28125, "tokens": 2304, "cap": 8192}
+@@{"stage": "detect", "frac": 0.296875, "tokens": 2432, "cap": 8192}
+@@{"stage": "detect", "frac": 0.3125, "tokens": 2560, "cap": 8192}
+@@{"stage": "detect", "frac": 0.328125, "tokens": 2688, "cap": 8192}
+@@{"stage": "detect", "frac": 0.34375, "tokens": 2816, "cap": 8192}
+@@{"stage": "detect", "frac": 0.359375, "tokens": 2944, "cap": 8192}
+@@{"stage": "detect", "frac": 0.375, "tokens": 3072, "cap": 8192}
+@@{"stage": "detect", "frac": 0.390625, "tokens": 3200, "cap": 8192}
+@@{"stage": "detect", "frac": 0.40625, "tokens": 3328, "cap": 8192}
+@@{"stage": "detect", "frac": 0.421875, "tokens": 3456, "cap": 8192}
+@@{"stage": "detect", "frac": 0.4375, "tokens": 3584, "cap": 8192}
+@@{"stage": "detect", "frac": 0.453125, "tokens": 3712, "cap": 8192}
+@@{"stage": "detect", "frac": 0.46875, "tokens": 3840, "cap": 8192}
+@@{"stage": "detect", "frac": 0.484375, "tokens": 3968, "cap": 8192}
+@@{"stage": "detect", "frac": 0.5, "tokens": 4096, "cap": 8192}
+@@{"stage": "detect", "frac": 0.515625, "tokens": 4224, "cap": 8192}
+@@{"stage": "detect", "frac": 0.53125, "tokens": 4352, "cap": 8192}
+@@{"stage": "detect", "frac": 0.546875, "tokens": 4480, "cap": 8192}
+@@{"stage": "detect", "frac": 0.5625, "tokens": 4608, "cap": 8192}
+@@{"stage": "detect", "frac": 0.578125, "tokens": 4736, "cap": 8192}
+@@{"stage": "detect", "frac": 0.59375, "tokens": 4864, "cap": 8192}
+@@{"stage": "detect", "frac": 0.609375, "tokens": 4992, "cap": 8192}
+@@{"stage": "detect", "frac": 0.625, "tokens": 5120, "cap": 8192}
+@@{"stage": "detect", "frac": 0.640625, "tokens": 5248, "cap": 8192}
+@@{"stage": "detect", "frac": 0.65625, "tokens": 5376, "cap": 8192}
+@@{"stage": "detect", "frac": 0.671875, "tokens": 5504, "cap": 8192}
+@@{"stage": "detect", "frac": 0.6875, "tokens": 5632, "cap": 8192}
+@@{"stage": "detect", "frac": 0.703125, "tokens": 5760, "cap": 8192}
+@@{"stage": "detect", "frac": 0.71875, "tokens": 5888, "cap": 8192}
+@@{"stage": "detect", "frac": 0.734375, "tokens": 6016, "cap": 8192}
+@@{"stage": "detect", "frac": 0.75, "tokens": 6144, "cap": 8192}
+@@{"stage": "detect", "frac": 0.765625, "tokens": 6272, "cap": 8192}
+@@{"stage": "detect", "frac": 0.78125, "tokens": 6400, "cap": 8192}
+@@{"stage": "detect", "frac": 0.796875, "tokens": 6528, "cap": 8192}
+@@{"stage": "detect", "frac": 0.8125, "tokens": 6656, "cap": 8192}
+@@{"stage": "detect", "frac": 0.828125, "tokens": 6784, "cap": 8192}
+@@{"stage": "detect", "frac": 0.84375, "tokens": 6912, "cap": 8192}
+@@{"stage": "detect", "frac": 0.859375, "tokens": 7040, "cap": 8192}
+@@{"stage": "detect", "frac": 0.875, "tokens": 7168, "cap": 8192}
+@@{"stage": "detect", "frac": 0.890625, "tokens": 7296, "cap": 8192}
+@@{"stage": "detect", "frac": 0.90625, "tokens": 7424, "cap": 8192}
+@@{"stage": "detect", "frac": 0.921875, "tokens": 7552, "cap": 8192}
+@@{"stage": "detect", "frac": 0.9375, "tokens": 7680, "cap": 8192}
+@@{"stage": "detect", "frac": 0.953125, "tokens": 7808, "cap": 8192}
+@@{"stage": "detect", "frac": 0.96875, "tokens": 7936, "cap": 8192}
+@@{"stage": "detect", "frac": 0.984375, "tokens": 8064, "cap": 8192}
+@@{"stage": "detect", "frac": 1.0, "tokens": 8192, "cap": 8192}
+@@{"stage": "detect", "frac": 1.0}
+[detect] loops 15/32 · onset median 5872.0 · finished 2 · hit cap 30 · boxed 2
+@@{"stage": "detect_done", "loops": 15, "n": 32, "onset_median": 5872.0, "finished": 2, "hit_cap": 30}
+@@{"stage": "direction", "frac": 0.0625}
+@@{"stage": "direction", "frac": 0.125}
+@@{"stage": "direction", "frac": 0.1875}
+@@{"stage": "direction", "frac": 0.25}
+@@{"stage": "direction", "frac": 0.3125}
+@@{"stage": "direction", "frac": 0.375}
+@@{"stage": "direction", "frac": 0.4375}
+@@{"stage": "direction", "frac": 0.5}
+@@{"stage": "direction", "frac": 0.5625}
+@@{"stage": "direction", "frac": 0.625}
+@@{"stage": "direction", "frac": 0.6875}
+@@{"stage": "direction", "frac": 0.75}
+@@{"stage": "direction", "frac": 0.8125}
+@@{"stage": "direction", "frac": 0.875}
+@@{"stage": "direction", "frac": 0.9375}
+@@{"stage": "direction", "frac": 1.0}
+[localize] layers [19, 15] (last layer L23 excluded; it would rank #2) · loop tokens 44,406 · normal tokens 207,144
+@@{"stage": "localize_done", "layers": [19, 15], "last_layer_rank": 2}
+@@{"stage": "verify_base", "frac": 0.015625, "tokens": 128, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.03125, "tokens": 256, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.046875, "tokens": 384, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.0625, "tokens": 512, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.078125, "tokens": 640, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.09375, "tokens": 768, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.109375, "tokens": 896, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.125, "tokens": 1024, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.140625, "tokens": 1152, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.15625, "tokens": 1280, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.171875, "tokens": 1408, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.1875, "tokens": 1536, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.203125, "tokens": 1664, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.21875, "tokens": 1792, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.234375, "tokens": 1920, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.25, "tokens": 2048, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.265625, "tokens": 2176, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.28125, "tokens": 2304, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.296875, "tokens": 2432, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.3125, "tokens": 2560, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.328125, "tokens": 2688, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.34375, "tokens": 2816, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.359375, "tokens": 2944, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.375, "tokens": 3072, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.390625, "tokens": 3200, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.40625, "tokens": 3328, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.421875, "tokens": 3456, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.4375, "tokens": 3584, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.453125, "tokens": 3712, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.46875, "tokens": 3840, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.484375, "tokens": 3968, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.5, "tokens": 4096, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.515625, "tokens": 4224, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.53125, "tokens": 4352, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.546875, "tokens": 4480, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.5625, "tokens": 4608, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.578125, "tokens": 4736, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.59375, "tokens": 4864, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.609375, "tokens": 4992, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.625, "tokens": 5120, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.640625, "tokens": 5248, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.65625, "tokens": 5376, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.671875, "tokens": 5504, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.6875, "tokens": 5632, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.703125, "tokens": 5760, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.71875, "tokens": 5888, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.734375, "tokens": 6016, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.75, "tokens": 6144, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.765625, "tokens": 6272, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.78125, "tokens": 6400, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.796875, "tokens": 6528, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.8125, "tokens": 6656, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.828125, "tokens": 6784, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.84375, "tokens": 6912, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.859375, "tokens": 7040, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.875, "tokens": 7168, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.890625, "tokens": 7296, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.90625, "tokens": 7424, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.921875, "tokens": 7552, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.9375, "tokens": 7680, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.953125, "tokens": 7808, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.96875, "tokens": 7936, "cap": 8192}
+@@{"stage": "verify_base", "frac": 0.984375, "tokens": 8064, "cap": 8192}
+@@{"stage": "verify_base", "frac": 1.0, "tokens": 8192, "cap": 8192}
+@@{"stage": "verify_base", "frac": 1.0}
+[verify:base] loops 8/32 · finished 3 · hit cap 29 · boxed 3
+@@{"stage": "verify_done", "cond": "base", "loops": 8, "n": 32, "finished": 3, "hit_cap": 29}
+@@{"stage": "verify_direction", "frac": 0.015625, "tokens": 128, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.03125, "tokens": 256, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.046875, "tokens": 384, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.0625, "tokens": 512, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.078125, "tokens": 640, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.09375, "tokens": 768, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.109375, "tokens": 896, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.125, "tokens": 1024, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.140625, "tokens": 1152, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.15625, "tokens": 1280, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.171875, "tokens": 1408, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.1875, "tokens": 1536, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.203125, "tokens": 1664, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.21875, "tokens": 1792, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.234375, "tokens": 1920, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.25, "tokens": 2048, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.265625, "tokens": 2176, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.28125, "tokens": 2304, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.296875, "tokens": 2432, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.3125, "tokens": 2560, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.328125, "tokens": 2688, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.34375, "tokens": 2816, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.359375, "tokens": 2944, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.375, "tokens": 3072, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.390625, "tokens": 3200, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.40625, "tokens": 3328, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.421875, "tokens": 3456, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.4375, "tokens": 3584, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.453125, "tokens": 3712, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.46875, "tokens": 3840, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.484375, "tokens": 3968, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.5, "tokens": 4096, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.515625, "tokens": 4224, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.53125, "tokens": 4352, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.546875, "tokens": 4480, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.5625, "tokens": 4608, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.578125, "tokens": 4736, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.59375, "tokens": 4864, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.609375, "tokens": 4992, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.625, "tokens": 5120, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.640625, "tokens": 5248, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.65625, "tokens": 5376, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.671875, "tokens": 5504, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.6875, "tokens": 5632, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.703125, "tokens": 5760, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.71875, "tokens": 5888, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.734375, "tokens": 6016, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.75, "tokens": 6144, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.765625, "tokens": 6272, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.78125, "tokens": 6400, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.796875, "tokens": 6528, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.8125, "tokens": 6656, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.828125, "tokens": 6784, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.84375, "tokens": 6912, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.859375, "tokens": 7040, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.875, "tokens": 7168, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.890625, "tokens": 7296, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.90625, "tokens": 7424, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.921875, "tokens": 7552, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.9375, "tokens": 7680, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.953125, "tokens": 7808, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.96875, "tokens": 7936, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 0.984375, "tokens": 8064, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 1.0, "tokens": 8192, "cap": 8192}
+@@{"stage": "verify_direction", "frac": 1.0}
+[verify:direction] loops 0/32 · finished 6 · hit cap 26 · boxed 6
+@@{"stage": "verify_done", "cond": "direction", "loops": 0, "n": 32, "finished": 6, "hit_cap": 26}
+@@{"stage": "verify_random", "frac": 0.015625, "tokens": 128, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.03125, "tokens": 256, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.046875, "tokens": 384, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.0625, "tokens": 512, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.078125, "tokens": 640, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.09375, "tokens": 768, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.109375, "tokens": 896, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.125, "tokens": 1024, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.140625, "tokens": 1152, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.15625, "tokens": 1280, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.171875, "tokens": 1408, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.1875, "tokens": 1536, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.203125, "tokens": 1664, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.21875, "tokens": 1792, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.234375, "tokens": 1920, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.25, "tokens": 2048, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.265625, "tokens": 2176, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.28125, "tokens": 2304, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.296875, "tokens": 2432, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.3125, "tokens": 2560, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.328125, "tokens": 2688, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.34375, "tokens": 2816, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.359375, "tokens": 2944, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.375, "tokens": 3072, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.390625, "tokens": 3200, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.40625, "tokens": 3328, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.421875, "tokens": 3456, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.4375, "tokens": 3584, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.453125, "tokens": 3712, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.46875, "tokens": 3840, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.484375, "tokens": 3968, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.5, "tokens": 4096, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.515625, "tokens": 4224, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.53125, "tokens": 4352, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.546875, "tokens": 4480, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.5625, "tokens": 4608, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.578125, "tokens": 4736, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.59375, "tokens": 4864, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.609375, "tokens": 4992, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.625, "tokens": 5120, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.640625, "tokens": 5248, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.65625, "tokens": 5376, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.671875, "tokens": 5504, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.6875, "tokens": 5632, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.703125, "tokens": 5760, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.71875, "tokens": 5888, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.734375, "tokens": 6016, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.75, "tokens": 6144, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.765625, "tokens": 6272, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.78125, "tokens": 6400, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.796875, "tokens": 6528, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.8125, "tokens": 6656, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.828125, "tokens": 6784, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.84375, "tokens": 6912, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.859375, "tokens": 7040, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.875, "tokens": 7168, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.890625, "tokens": 7296, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.90625, "tokens": 7424, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.921875, "tokens": 7552, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.9375, "tokens": 7680, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.953125, "tokens": 7808, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.96875, "tokens": 7936, "cap": 8192}
+@@{"stage": "verify_random", "frac": 0.984375, "tokens": 8064, "cap": 8192}
+@@{"stage": "verify_random", "frac": 1.0, "tokens": 8192, "cap": 8192}
+@@{"stage": "verify_random", "frac": 1.0}
+[verify:random] loops 10/32 · finished 4 · hit cap 28 · boxed 4
+@@{"stage": "verify_done", "cond": "random", "loops": 10, "n": 32, "finished": 4, "hit_cap": 28}
+[verify] direction 0/32 vs random 10/32: +31.2 points, p=0.00043 → confirmed
+@@{"stage": "done", "status": "ok", "out": "../data/scan_e2e_20261116"}

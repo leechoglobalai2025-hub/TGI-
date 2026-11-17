@@ -1,0 +1,9 @@
+
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 320/320 [00:00<00:00, 4187.88it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[只动第 23 层：置零写入量前 64] 陷入循环的回答 84% · 循环内 token 占比 51.7% · 循环起点中位 2762 · 撑满上限 88% · RepRate 0.854 · 思考收尾 12% · 给出 boxed 12% · 平均 7667 token  (1111s)
+[只动第 19 层：置零写入量前 64] 陷入循环的回答 62% · 循环内 token 占比 21.1% · 循环起点中位 5782 · 撑满上限 88% · RepRate 0.819 · 思考收尾 12% · 给出 boxed 12% · 平均 7609 token  (1103s)
+[只动第 15 层：置零写入量前 64] 陷入循环的回答 16% · 循环内 token 占比 6.5% · 循环起点中位 4122 · 撑满上限 75% · RepRate 0.770 · 思考收尾 25% · 给出 boxed 22% · 平均 7071 token  (1104s)
+峰值显存 7.4 GiB · 输出 data/rcs_layers_20261116

@@ -1,0 +1,9 @@
+
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 320/320 [00:00<00:00, 3694.95it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[不改动] 续写 29 条：答对 3 → 3/32 · 结束 3 → 3 · 续写后陷入循环 28 · 撑满新上限 29  (2432s)
+[盲测方向+盲测神经元 α=6] 续写 29 条：答对 3 → 6/32 · 结束 3 → 6 · 续写后陷入循环 2 · 撑满新上限 26  (2414s)
+[参照：MIT 的实际改动] 续写 20 条：答对 12 → 17/32 · 结束 12 → 17 · 续写后陷入循环 2 · 撑满新上限 15  (1685s)
+峰值显存 已分配 11.5 GiB / 已保留 20.0 GiB · 输出 data/continue_20261116

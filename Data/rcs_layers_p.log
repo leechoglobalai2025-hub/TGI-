@@ -1,0 +1,12 @@
+
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 320/320 [00:00<00:00, 3462.20it/s]
+   第 23 层：选中列在方向上的平均分量 0.0229 → 0.0000；其余列未变 = True
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[只动第 23 层：写入量前 64 减去幽灵方向] 陷入循环的回答 50% · 循环内 token 占比 18.3% · 循环起点中位 5238 · 撑满上限 81% · RepRate 0.795 · 思考收尾 19% · 给出 boxed 19% · 平均 7228 token  (1116s)
+   第 19 层：选中列在方向上的平均分量 0.0312 → 0.0000；其余列未变 = True
+[只动第 19 层：写入量前 64 减去幽灵方向] 陷入循环的回答 41% · 循环内 token 占比 14.1% · 循环起点中位 5499 · 撑满上限 91% · RepRate 0.802 · 思考收尾 9% · 给出 boxed 9% · 平均 7701 token  (1079s)
+   第 15 层：选中列在方向上的平均分量 0.0325 → 0.0000；其余列未变 = True
+[只动第 15 层：写入量前 64 减去幽灵方向] 陷入循环的回答 41% · 循环内 token 占比 15.9% · 循环起点中位 4448 · 撑满上限 81% · RepRate 0.791 · 思考收尾 19% · 给出 boxed 19% · 平均 7438 token  (1079s)
+峰值显存 7.4 GiB · 输出 data/rcs_layers_20261116
