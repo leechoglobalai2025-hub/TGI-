@@ -1,0 +1,30 @@
+词嵌入：248320/248320 行有改动；元素改动 95.35%
+语言模型：726,894,236/752,393,024 个元素不同 = 96.61%；整体相对幅度 ‖Δ‖/‖W‖ = 0.0514
+语言模型(不含词嵌入)：484,445,458/498,113,344 个元素不同 = 97.26%；整体相对幅度 ‖Δ‖/‖W‖ = 0.0560
+视觉：13,523,075/100,592,896 个元素不同 = 13.44%；整体相对幅度 ‖Δ‖/‖W‖ = 0.0034
+mtp：20,200,455/20,452,864 个元素不同 = 98.77%；整体相对幅度 ‖Δ‖/‖W‖ = 0.0707
+完全没变的张量 170 个，其中语言模型 24 个：
+   layers.10.linear_attn.A_log (16,)
+   layers.13.linear_attn.A_log (16,)
+   layers.14.linear_attn.A_log (16,)
+   layers.16.linear_attn.A_log (16,)
+   layers.17.linear_attn.A_log (16,)
+   layers.18.linear_attn.A_log (16,)
+   layers.21.linear_attn.A_log (16,)
+   layers.22.linear_attn.A_log (16,)
+   layers.4.linear_attn.A_log (16,)
+   layers.6.linear_attn.A_log (16,)
+   layers.8.linear_attn.A_log (16,)
+   layers.0.linear_attn.dt_bias (16,)
+   layers.10.linear_attn.dt_bias (16,)
+   layers.12.linear_attn.dt_bias (16,)
+   layers.14.linear_attn.dt_bias (16,)
+   layers.17.linear_attn.dt_bias (16,)
+   layers.18.linear_attn.dt_bias (16,)
+   layers.2.linear_attn.dt_bias (16,)
+   layers.20.linear_attn.dt_bias (16,)
+   layers.21.linear_attn.dt_bias (16,)
+   layers.22.linear_attn.dt_bias (16,)
+   layers.5.linear_attn.dt_bias (16,)
+   layers.6.linear_attn.dt_bias (16,)
+   layers.9.linear_attn.dt_bias (16,)
