@@ -1,0 +1,3370 @@
+{
+ "D 评测题（第 233–264 题） | 不改动": {
+  "n": 32,
+  "finished": 3,
+  "boxed": 3,
+  "correct": 3,
+  "rows": [
+   {
+    "id": "math_train_algebra_233",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_234",
+    "finished": false,
+    "given": null,
+    "truth": "288",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_235",
+    "finished": false,
+    "given": null,
+    "truth": "13",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_236",
+    "finished": false,
+    "given": null,
+    "truth": "1\\frac{2}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_237",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{13}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_238",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_239",
+    "finished": false,
+    "given": null,
+    "truth": "1000",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_240",
+    "finished": false,
+    "given": null,
+    "truth": "11z^{17}(5+11z^{17})",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_241",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_242",
+    "finished": false,
+    "given": null,
+    "truth": "50",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_243",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_244",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_245",
+    "finished": false,
+    "given": null,
+    "truth": "2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_246",
+    "finished": false,
+    "given": null,
+    "truth": "5^{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_247",
+    "finished": false,
+    "given": null,
+    "truth": "-2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_248",
+    "finished": true,
+    "given": "1004",
+    "truth": "1004",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_249",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{1}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_250",
+    "finished": false,
+    "given": null,
+    "truth": "640",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_251",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_252",
+    "finished": true,
+    "given": "17",
+    "truth": "17",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_253",
+    "finished": false,
+    "given": null,
+    "truth": "3x^3-5x^2+8x-35",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_254",
+    "finished": false,
+    "given": null,
+    "truth": "25",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_255",
+    "finished": false,
+    "given": null,
+    "truth": "12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_256",
+    "finished": true,
+    "given": "-\\frac{8}{27}",
+    "truth": "-\\frac{8}{27}",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_258",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_259",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_260",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_261",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_262",
+    "finished": false,
+    "given": null,
+    "truth": "15",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_263",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_264",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{20}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_265",
+    "finished": false,
+    "given": null,
+    "truth": "(6,0)",
+    "correct": false
+   }
+  ]
+ },
+ "D 评测题（第 233–264 题） | 盲测：置零自选 128 个": {
+  "n": 32,
+  "finished": 4,
+  "boxed": 4,
+  "correct": 4,
+  "rows": [
+   {
+    "id": "math_train_algebra_233",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_234",
+    "finished": false,
+    "given": null,
+    "truth": "288",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_235",
+    "finished": false,
+    "given": null,
+    "truth": "13",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_236",
+    "finished": false,
+    "given": null,
+    "truth": "1\\frac{2}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_237",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{13}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_238",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_239",
+    "finished": false,
+    "given": null,
+    "truth": "1000",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_240",
+    "finished": false,
+    "given": null,
+    "truth": "11z^{17}(5+11z^{17})",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_241",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_242",
+    "finished": false,
+    "given": null,
+    "truth": "50",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_243",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_244",
+    "finished": true,
+    "given": "10",
+    "truth": "10",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_245",
+    "finished": false,
+    "given": null,
+    "truth": "2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_246",
+    "finished": false,
+    "given": null,
+    "truth": "5^{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_247",
+    "finished": false,
+    "given": null,
+    "truth": "-2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_248",
+    "finished": false,
+    "given": null,
+    "truth": "1004",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_249",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{1}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_250",
+    "finished": false,
+    "given": null,
+    "truth": "640",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_251",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_252",
+    "finished": true,
+    "given": "17",
+    "truth": "17",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_253",
+    "finished": true,
+    "given": "3x^3-5x^2+8x-35",
+    "truth": "3x^3-5x^2+8x-35",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_254",
+    "finished": false,
+    "given": null,
+    "truth": "25",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_255",
+    "finished": false,
+    "given": null,
+    "truth": "12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_256",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{8}{27}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_258",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_259",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_260",
+    "finished": true,
+    "given": "6",
+    "truth": "6",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_261",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_262",
+    "finished": false,
+    "given": null,
+    "truth": "15",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_263",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_264",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{20}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_265",
+    "finished": false,
+    "given": null,
+    "truth": "(6,0)",
+    "correct": false
+   }
+  ]
+ },
+ "D 评测题（第 233–264 题） | 对照：同层随机置零": {
+  "n": 32,
+  "finished": 8,
+  "boxed": 8,
+  "correct": 8,
+  "rows": [
+   {
+    "id": "math_train_algebra_233",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_234",
+    "finished": false,
+    "given": null,
+    "truth": "288",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_235",
+    "finished": false,
+    "given": null,
+    "truth": "13",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_236",
+    "finished": false,
+    "given": null,
+    "truth": "1\\frac{2}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_237",
+    "finished": true,
+    "given": "\\frac{13}{4}",
+    "truth": "\\frac{13}{4}",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_238",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_239",
+    "finished": true,
+    "given": "1000",
+    "truth": "1000",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_240",
+    "finished": false,
+    "given": null,
+    "truth": "11z^{17}(5+11z^{17})",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_241",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_242",
+    "finished": false,
+    "given": null,
+    "truth": "50",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_243",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_244",
+    "finished": true,
+    "given": "10",
+    "truth": "10",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_245",
+    "finished": false,
+    "given": null,
+    "truth": "2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_246",
+    "finished": false,
+    "given": null,
+    "truth": "5^{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_247",
+    "finished": false,
+    "given": null,
+    "truth": "-2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_248",
+    "finished": true,
+    "given": "1004",
+    "truth": "1004",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_249",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{1}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_250",
+    "finished": false,
+    "given": null,
+    "truth": "640",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_251",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_252",
+    "finished": true,
+    "given": "17",
+    "truth": "17",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_253",
+    "finished": true,
+    "given": "3x^3-5x^2+8x-35",
+    "truth": "3x^3-5x^2+8x-35",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_254",
+    "finished": false,
+    "given": null,
+    "truth": "25",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_255",
+    "finished": false,
+    "given": null,
+    "truth": "12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_256",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{8}{27}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_258",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_259",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_260",
+    "finished": true,
+    "given": "6",
+    "truth": "6",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_261",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_262",
+    "finished": false,
+    "given": null,
+    "truth": "15",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_263",
+    "finished": true,
+    "given": "6",
+    "truth": "6",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_264",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{20}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_265",
+    "finished": false,
+    "given": null,
+    "truth": "(6,0)",
+    "correct": false
+   }
+  ]
+ },
+ "D 评测题（第 233–264 题） | 参照：MIT 的实际改动": {
+  "n": 32,
+  "finished": 12,
+  "boxed": 12,
+  "correct": 12,
+  "rows": [
+   {
+    "id": "math_train_algebra_233",
+    "finished": true,
+    "given": "6",
+    "truth": "6",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_234",
+    "finished": false,
+    "given": null,
+    "truth": "288",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_235",
+    "finished": false,
+    "given": null,
+    "truth": "13",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_236",
+    "finished": false,
+    "given": null,
+    "truth": "1\\frac{2}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_237",
+    "finished": true,
+    "given": "\\frac{13}{4}",
+    "truth": "\\frac{13}{4}",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_238",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_239",
+    "finished": true,
+    "given": "1000",
+    "truth": "1000",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_240",
+    "finished": false,
+    "given": null,
+    "truth": "11z^{17}(5+11z^{17})",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_241",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_242",
+    "finished": false,
+    "given": null,
+    "truth": "50",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_243",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_244",
+    "finished": true,
+    "given": "10",
+    "truth": "10",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_245",
+    "finished": false,
+    "given": null,
+    "truth": "2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_246",
+    "finished": false,
+    "given": null,
+    "truth": "5^{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_247",
+    "finished": false,
+    "given": null,
+    "truth": "-2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_248",
+    "finished": true,
+    "given": "1004",
+    "truth": "1004",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_249",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{1}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_250",
+    "finished": true,
+    "given": "640",
+    "truth": "640",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_251",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_252",
+    "finished": true,
+    "given": "17",
+    "truth": "17",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_253",
+    "finished": true,
+    "given": "3x^3 - 5x^2 + 8x - 35",
+    "truth": "3x^3-5x^2+8x-35",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_254",
+    "finished": true,
+    "given": "25",
+    "truth": "25",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_255",
+    "finished": true,
+    "given": "12",
+    "truth": "12",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_256",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{8}{27}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_258",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_259",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_260",
+    "finished": true,
+    "given": "6",
+    "truth": "6",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_261",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_262",
+    "finished": false,
+    "given": null,
+    "truth": "15",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_263",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_264",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{20}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_265",
+    "finished": true,
+    "given": "(6,0)",
+    "truth": "(6,0)",
+    "correct": true
+   }
+  ]
+ },
+ "D 评测题（第 233–264 题） | 盲测方向+盲测神经元 α=6": {
+  "n": 32,
+  "finished": 3,
+  "boxed": 3,
+  "correct": 3,
+  "rows": [
+   {
+    "id": "math_train_algebra_233",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_234",
+    "finished": false,
+    "given": null,
+    "truth": "288",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_235",
+    "finished": false,
+    "given": null,
+    "truth": "13",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_236",
+    "finished": false,
+    "given": null,
+    "truth": "1\\frac{2}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_237",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{13}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_238",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_239",
+    "finished": false,
+    "given": null,
+    "truth": "1000",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_240",
+    "finished": false,
+    "given": null,
+    "truth": "11z^{17}(5+11z^{17})",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_241",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_242",
+    "finished": false,
+    "given": null,
+    "truth": "50",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_243",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_244",
+    "finished": true,
+    "given": "10",
+    "truth": "10",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_245",
+    "finished": false,
+    "given": null,
+    "truth": "2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_246",
+    "finished": false,
+    "given": null,
+    "truth": "5^{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_247",
+    "finished": false,
+    "given": null,
+    "truth": "-2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_248",
+    "finished": true,
+    "given": "1004",
+    "truth": "1004",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_249",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{1}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_250",
+    "finished": false,
+    "given": null,
+    "truth": "640",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_251",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_252",
+    "finished": true,
+    "given": "17",
+    "truth": "17",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_253",
+    "finished": false,
+    "given": null,
+    "truth": "3x^3-5x^2+8x-35",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_254",
+    "finished": false,
+    "given": null,
+    "truth": "25",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_255",
+    "finished": false,
+    "given": null,
+    "truth": "12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_256",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{8}{27}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_258",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_259",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_260",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_261",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_262",
+    "finished": false,
+    "given": null,
+    "truth": "15",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_263",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_264",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{20}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_265",
+    "finished": false,
+    "given": null,
+    "truth": "(6,0)",
+    "correct": false
+   }
+  ]
+ },
+ "D 评测题（第 233–264 题） | 对照：同范数随机正交方向": {
+  "n": 32,
+  "finished": 2,
+  "boxed": 2,
+  "correct": 2,
+  "rows": [
+   {
+    "id": "math_train_algebra_233",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_234",
+    "finished": false,
+    "given": null,
+    "truth": "288",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_235",
+    "finished": false,
+    "given": null,
+    "truth": "13",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_236",
+    "finished": false,
+    "given": null,
+    "truth": "1\\frac{2}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_237",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{13}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_238",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_239",
+    "finished": false,
+    "given": null,
+    "truth": "1000",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_240",
+    "finished": false,
+    "given": null,
+    "truth": "11z^{17}(5+11z^{17})",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_241",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_242",
+    "finished": false,
+    "given": null,
+    "truth": "50",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_243",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_244",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_245",
+    "finished": false,
+    "given": null,
+    "truth": "2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_246",
+    "finished": false,
+    "given": null,
+    "truth": "5^{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_247",
+    "finished": false,
+    "given": null,
+    "truth": "-2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_248",
+    "finished": false,
+    "given": null,
+    "truth": "1004",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_249",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{1}{4}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_250",
+    "finished": false,
+    "given": null,
+    "truth": "640",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_251",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_252",
+    "finished": true,
+    "given": "17",
+    "truth": "17",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_253",
+    "finished": false,
+    "given": null,
+    "truth": "3x^3-5x^2+8x-35",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_254",
+    "finished": false,
+    "given": null,
+    "truth": "25",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_255",
+    "finished": false,
+    "given": null,
+    "truth": "12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_256",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac{8}{27}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_258",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_259",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_260",
+    "finished": true,
+    "given": "6",
+    "truth": "6",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_261",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_262",
+    "finished": false,
+    "given": null,
+    "truth": "15",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_263",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_264",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{20}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_265",
+    "finished": false,
+    "given": null,
+    "truth": "(6,0)",
+    "correct": false
+   }
+  ]
+ },
+ "C 的题（第 33–64 题；昨天的不改动和 MIT 条件没有保存生成结果） | 只置零第 15 层": {
+  "n": 32,
+  "finished": 8,
+  "boxed": 7,
+  "correct": 7,
+  "rows": [
+   {
+    "id": "math_train_algebra_32",
+    "finished": false,
+    "given": null,
+    "truth": "-30",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_33",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_34",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_35",
+    "finished": false,
+    "given": null,
+    "truth": "8.75",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_36",
+    "finished": true,
+    "given": "200",
+    "truth": "200",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_37",
+    "finished": true,
+    "given": "12",
+    "truth": "12",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_38",
+    "finished": false,
+    "given": null,
+    "truth": "2, 3, \\text{ and } 4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_39",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_40",
+    "finished": false,
+    "given": null,
+    "truth": "95",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_41",
+    "finished": false,
+    "given": null,
+    "truth": "45",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_42",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_43",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_44",
+    "finished": true,
+    "given": "(4,4)",
+    "truth": "(4,4)",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_45",
+    "finished": true,
+    "given": "14",
+    "truth": "14",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_46",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_47",
+    "finished": true,
+    "given": "4",
+    "truth": "4",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_48",
+    "finished": false,
+    "given": null,
+    "truth": "729",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_49",
+    "finished": false,
+    "given": null,
+    "truth": "-29x^5(7x^6-2)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_50",
+    "finished": true,
+    "given": "64",
+    "truth": "64",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_51",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_52",
+    "finished": false,
+    "given": null,
+    "truth": "21",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_53",
+    "finished": true,
+    "given": "66",
+    "truth": "66",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_54",
+    "finished": false,
+    "given": null,
+    "truth": "11",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_55",
+    "finished": true,
+    "given": null,
+    "truth": "-\\frac12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_56",
+    "finished": false,
+    "given": null,
+    "truth": "59",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_57",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_58",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_59",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_60",
+    "finished": false,
+    "given": null,
+    "truth": "-80\\leq g(x)\\leq 82",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_61",
+    "finished": false,
+    "given": null,
+    "truth": "-6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_62",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_63",
+    "finished": false,
+    "given": null,
+    "truth": "5-12i",
+    "correct": false
+   }
+  ]
+ },
+ "C 的题（第 33–64 题；昨天的不改动和 MIT 条件没有保存生成结果） | 只置零第 19 层": {
+  "n": 32,
+  "finished": 4,
+  "boxed": 4,
+  "correct": 4,
+  "rows": [
+   {
+    "id": "math_train_algebra_32",
+    "finished": false,
+    "given": null,
+    "truth": "-30",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_33",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_34",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_35",
+    "finished": false,
+    "given": null,
+    "truth": "8.75",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_36",
+    "finished": true,
+    "given": "200",
+    "truth": "200",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_37",
+    "finished": true,
+    "given": "12",
+    "truth": "12",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_38",
+    "finished": false,
+    "given": null,
+    "truth": "2, 3, \\text{ and } 4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_39",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_40",
+    "finished": true,
+    "given": "95",
+    "truth": "95",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_41",
+    "finished": false,
+    "given": null,
+    "truth": "45",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_42",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_43",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_44",
+    "finished": false,
+    "given": null,
+    "truth": "(4,4)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_45",
+    "finished": false,
+    "given": null,
+    "truth": "14",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_46",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_47",
+    "finished": false,
+    "given": null,
+    "truth": "4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_48",
+    "finished": false,
+    "given": null,
+    "truth": "729",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_49",
+    "finished": false,
+    "given": null,
+    "truth": "-29x^5(7x^6-2)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_50",
+    "finished": true,
+    "given": "64",
+    "truth": "64",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_51",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_52",
+    "finished": false,
+    "given": null,
+    "truth": "21",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_53",
+    "finished": false,
+    "given": null,
+    "truth": "66",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_54",
+    "finished": false,
+    "given": null,
+    "truth": "11",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_55",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_56",
+    "finished": false,
+    "given": null,
+    "truth": "59",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_57",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_58",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_59",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_60",
+    "finished": false,
+    "given": null,
+    "truth": "-80\\leq g(x)\\leq 82",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_61",
+    "finished": false,
+    "given": null,
+    "truth": "-6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_62",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_63",
+    "finished": false,
+    "given": null,
+    "truth": "5-12i",
+    "correct": false
+   }
+  ]
+ },
+ "C 的题（第 33–64 题；昨天的不改动和 MIT 条件没有保存生成结果） | 只置零第 23 层": {
+  "n": 32,
+  "finished": 4,
+  "boxed": 4,
+  "correct": 4,
+  "rows": [
+   {
+    "id": "math_train_algebra_32",
+    "finished": false,
+    "given": null,
+    "truth": "-30",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_33",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_34",
+    "finished": true,
+    "given": "3",
+    "truth": "3",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_35",
+    "finished": false,
+    "given": null,
+    "truth": "8.75",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_36",
+    "finished": true,
+    "given": "200",
+    "truth": "200",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_37",
+    "finished": false,
+    "given": null,
+    "truth": "12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_38",
+    "finished": false,
+    "given": null,
+    "truth": "2, 3, \\text{ and } 4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_39",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_40",
+    "finished": false,
+    "given": null,
+    "truth": "95",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_41",
+    "finished": false,
+    "given": null,
+    "truth": "45",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_42",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_43",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_44",
+    "finished": true,
+    "given": "(4,4)",
+    "truth": "(4,4)",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_45",
+    "finished": false,
+    "given": null,
+    "truth": "14",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_46",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_47",
+    "finished": false,
+    "given": null,
+    "truth": "4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_48",
+    "finished": false,
+    "given": null,
+    "truth": "729",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_49",
+    "finished": false,
+    "given": null,
+    "truth": "-29x^5(7x^6-2)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_50",
+    "finished": false,
+    "given": null,
+    "truth": "64",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_51",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_52",
+    "finished": false,
+    "given": null,
+    "truth": "21",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_53",
+    "finished": true,
+    "given": "66",
+    "truth": "66",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_54",
+    "finished": false,
+    "given": null,
+    "truth": "11",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_55",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_56",
+    "finished": false,
+    "given": null,
+    "truth": "59",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_57",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_58",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_59",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_60",
+    "finished": false,
+    "given": null,
+    "truth": "-80\\leq g(x)\\leq 82",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_61",
+    "finished": false,
+    "given": null,
+    "truth": "-6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_62",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_63",
+    "finished": false,
+    "given": null,
+    "truth": "5-12i",
+    "correct": false
+   }
+  ]
+ },
+ "C 的题（第 33–64 题；昨天的不改动和 MIT 条件没有保存生成结果） | 第 15 层减方向 α=1": {
+  "n": 32,
+  "finished": 6,
+  "boxed": 6,
+  "correct": 6,
+  "rows": [
+   {
+    "id": "math_train_algebra_32",
+    "finished": false,
+    "given": null,
+    "truth": "-30",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_33",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_34",
+    "finished": true,
+    "given": "3",
+    "truth": "3",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_35",
+    "finished": false,
+    "given": null,
+    "truth": "8.75",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_36",
+    "finished": true,
+    "given": "200",
+    "truth": "200",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_37",
+    "finished": true,
+    "given": "12",
+    "truth": "12",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_38",
+    "finished": false,
+    "given": null,
+    "truth": "2, 3, \\text{ and } 4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_39",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_40",
+    "finished": false,
+    "given": null,
+    "truth": "95",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_41",
+    "finished": false,
+    "given": null,
+    "truth": "45",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_42",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_43",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_44",
+    "finished": true,
+    "given": "(4, 4)",
+    "truth": "(4,4)",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_45",
+    "finished": false,
+    "given": null,
+    "truth": "14",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_46",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_47",
+    "finished": true,
+    "given": "4",
+    "truth": "4",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_48",
+    "finished": false,
+    "given": null,
+    "truth": "729",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_49",
+    "finished": false,
+    "given": null,
+    "truth": "-29x^5(7x^6-2)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_50",
+    "finished": false,
+    "given": null,
+    "truth": "64",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_51",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_52",
+    "finished": false,
+    "given": null,
+    "truth": "21",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_53",
+    "finished": true,
+    "given": "66",
+    "truth": "66",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_54",
+    "finished": false,
+    "given": null,
+    "truth": "11",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_55",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_56",
+    "finished": false,
+    "given": null,
+    "truth": "59",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_57",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_58",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_59",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_60",
+    "finished": false,
+    "given": null,
+    "truth": "-80\\leq g(x)\\leq 82",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_61",
+    "finished": false,
+    "given": null,
+    "truth": "-6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_62",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_63",
+    "finished": false,
+    "given": null,
+    "truth": "5-12i",
+    "correct": false
+   }
+  ]
+ },
+ "C 的题（第 33–64 题；昨天的不改动和 MIT 条件没有保存生成结果） | 第 19 层减方向 α=1": {
+  "n": 32,
+  "finished": 3,
+  "boxed": 3,
+  "correct": 3,
+  "rows": [
+   {
+    "id": "math_train_algebra_32",
+    "finished": false,
+    "given": null,
+    "truth": "-30",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_33",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_34",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_35",
+    "finished": false,
+    "given": null,
+    "truth": "8.75",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_36",
+    "finished": true,
+    "given": "200",
+    "truth": "200",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_37",
+    "finished": false,
+    "given": null,
+    "truth": "12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_38",
+    "finished": false,
+    "given": null,
+    "truth": "2, 3, \\text{ and } 4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_39",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_40",
+    "finished": false,
+    "given": null,
+    "truth": "95",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_41",
+    "finished": false,
+    "given": null,
+    "truth": "45",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_42",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_43",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_44",
+    "finished": false,
+    "given": null,
+    "truth": "(4,4)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_45",
+    "finished": true,
+    "given": "14",
+    "truth": "14",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_46",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_47",
+    "finished": true,
+    "given": "4",
+    "truth": "4",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_48",
+    "finished": false,
+    "given": null,
+    "truth": "729",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_49",
+    "finished": false,
+    "given": null,
+    "truth": "-29x^5(7x^6-2)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_50",
+    "finished": false,
+    "given": null,
+    "truth": "64",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_51",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_52",
+    "finished": false,
+    "given": null,
+    "truth": "21",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_53",
+    "finished": false,
+    "given": null,
+    "truth": "66",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_54",
+    "finished": false,
+    "given": null,
+    "truth": "11",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_55",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_56",
+    "finished": false,
+    "given": null,
+    "truth": "59",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_57",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_58",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_59",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_60",
+    "finished": false,
+    "given": null,
+    "truth": "-80\\leq g(x)\\leq 82",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_61",
+    "finished": false,
+    "given": null,
+    "truth": "-6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_62",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_63",
+    "finished": false,
+    "given": null,
+    "truth": "5-12i",
+    "correct": false
+   }
+  ]
+ },
+ "C 的题（第 33–64 题；昨天的不改动和 MIT 条件没有保存生成结果） | 第 23 层减方向 α=1": {
+  "n": 32,
+  "finished": 6,
+  "boxed": 6,
+  "correct": 6,
+  "rows": [
+   {
+    "id": "math_train_algebra_32",
+    "finished": false,
+    "given": null,
+    "truth": "-30",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_33",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_34",
+    "finished": true,
+    "given": "3",
+    "truth": "3",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_35",
+    "finished": false,
+    "given": null,
+    "truth": "8.75",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_36",
+    "finished": true,
+    "given": "200",
+    "truth": "200",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_37",
+    "finished": true,
+    "given": "12",
+    "truth": "12",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_38",
+    "finished": false,
+    "given": null,
+    "truth": "2, 3, \\text{ and } 4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_39",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_40",
+    "finished": true,
+    "given": "95",
+    "truth": "95",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_41",
+    "finished": false,
+    "given": null,
+    "truth": "45",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_42",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_43",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_44",
+    "finished": false,
+    "given": null,
+    "truth": "(4,4)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_45",
+    "finished": false,
+    "given": null,
+    "truth": "14",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_46",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_47",
+    "finished": true,
+    "given": "m = 4",
+    "truth": "4",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_48",
+    "finished": false,
+    "given": null,
+    "truth": "729",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_49",
+    "finished": false,
+    "given": null,
+    "truth": "-29x^5(7x^6-2)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_50",
+    "finished": false,
+    "given": null,
+    "truth": "64",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_51",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_52",
+    "finished": false,
+    "given": null,
+    "truth": "21",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_53",
+    "finished": false,
+    "given": null,
+    "truth": "66",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_54",
+    "finished": false,
+    "given": null,
+    "truth": "11",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_55",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_56",
+    "finished": false,
+    "given": null,
+    "truth": "59",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_57",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_58",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_59",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{9}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_60",
+    "finished": false,
+    "given": null,
+    "truth": "-80\\leq g(x)\\leq 82",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_61",
+    "finished": false,
+    "given": null,
+    "truth": "-6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_62",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_63",
+    "finished": true,
+    "given": "5-12i",
+    "truth": "5-12i",
+    "correct": true
+   }
+  ]
+ },
+ "采集用的题（未修改模型） | 第 1–32 题（昨天）": {
+  "n": 32,
+  "finished": 2,
+  "boxed": 2,
+  "correct": 1,
+  "rows": [
+   {
+    "id": "math_train_algebra_0",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_1",
+    "finished": false,
+    "given": null,
+    "truth": "98",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_2",
+    "finished": false,
+    "given": null,
+    "truth": "4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_3",
+    "finished": false,
+    "given": null,
+    "truth": "17",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_4",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_5",
+    "finished": false,
+    "given": null,
+    "truth": "(3, -1)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_6",
+    "finished": false,
+    "given": null,
+    "truth": "[0,3)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_7",
+    "finished": false,
+    "given": null,
+    "truth": "11",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_8",
+    "finished": false,
+    "given": null,
+    "truth": "-7",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_9",
+    "finished": false,
+    "given": null,
+    "truth": "\\$42409",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_10",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_11",
+    "finished": true,
+    "given": "-16.5",
+    "truth": "k = \\frac{-33}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_12",
+    "finished": false,
+    "given": null,
+    "truth": "2 \\text{ euros}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_13",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_14",
+    "finished": false,
+    "given": null,
+    "truth": "41",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_15",
+    "finished": false,
+    "given": null,
+    "truth": "4",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_16",
+    "finished": false,
+    "given": null,
+    "truth": "10\\frac{1}{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_17",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{1}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_18",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_19",
+    "finished": false,
+    "given": null,
+    "truth": "45",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_20",
+    "finished": true,
+    "given": "(0, 5)",
+    "truth": "(0,5)",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_21",
+    "finished": false,
+    "given": null,
+    "truth": "2",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_22",
+    "finished": false,
+    "given": null,
+    "truth": "192",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_23",
+    "finished": false,
+    "given": null,
+    "truth": "9",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_24",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{20}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_25",
+    "finished": false,
+    "given": null,
+    "truth": "58",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_26",
+    "finished": false,
+    "given": null,
+    "truth": "8",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_27",
+    "finished": false,
+    "given": null,
+    "truth": "40",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_28",
+    "finished": false,
+    "given": null,
+    "truth": "71",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_29",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_30",
+    "finished": false,
+    "given": null,
+    "truth": "\\sqrt{2}+1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_31",
+    "finished": false,
+    "given": null,
+    "truth": "103",
+    "correct": false
+   }
+  ]
+ },
+ "采集用的题（未修改模型） | 第 201–232 题（D）": {
+  "n": 32,
+  "finished": 4,
+  "boxed": 4,
+  "correct": 4,
+  "rows": [
+   {
+    "id": "math_train_algebra_201",
+    "finished": false,
+    "given": null,
+    "truth": "13",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_202",
+    "finished": false,
+    "given": null,
+    "truth": "x = 12",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_203",
+    "finished": false,
+    "given": null,
+    "truth": "10",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_204",
+    "finished": false,
+    "given": null,
+    "truth": "27",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_205",
+    "finished": false,
+    "given": null,
+    "truth": "52",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_206",
+    "finished": false,
+    "given": null,
+    "truth": "5",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_207",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{2}{3}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_208",
+    "finished": false,
+    "given": null,
+    "truth": "68",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_209",
+    "finished": false,
+    "given": null,
+    "truth": "\\frac{3}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_210",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_211",
+    "finished": false,
+    "given": null,
+    "truth": "120a^{10}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_212",
+    "finished": true,
+    "given": "x^2 + 7x + 10",
+    "truth": "x^2 + 7x + 10",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_213",
+    "finished": false,
+    "given": null,
+    "truth": "1",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_214",
+    "finished": true,
+    "given": "9",
+    "truth": "9",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_215",
+    "finished": false,
+    "given": null,
+    "truth": "90",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_216",
+    "finished": false,
+    "given": null,
+    "truth": "-3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_217",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_218",
+    "finished": false,
+    "given": null,
+    "truth": "3",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_219",
+    "finished": false,
+    "given": null,
+    "truth": "-3x^4+5x^2-8x",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_220",
+    "finished": false,
+    "given": null,
+    "truth": "65",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_221",
+    "finished": false,
+    "given": null,
+    "truth": "16",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_222",
+    "finished": false,
+    "given": null,
+    "truth": "-\\dfrac{11}{12}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_223",
+    "finished": false,
+    "given": null,
+    "truth": "-\\frac 32",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_224",
+    "finished": false,
+    "given": null,
+    "truth": "40",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_225",
+    "finished": false,
+    "given": null,
+    "truth": "16",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_226",
+    "finished": false,
+    "given": null,
+    "truth": "375",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_227",
+    "finished": true,
+    "given": "18",
+    "truth": "18",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_228",
+    "finished": false,
+    "given": null,
+    "truth": "121",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_229",
+    "finished": false,
+    "given": null,
+    "truth": "6",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_230",
+    "finished": false,
+    "given": null,
+    "truth": "-1004",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_231",
+    "finished": false,
+    "given": null,
+    "truth": "28",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_232",
+    "finished": true,
+    "given": "16",
+    "truth": "16",
+    "correct": true
+   }
+  ]
+ },
+ "采集用的题（未修改模型） | Base 版，第 1–16 题": {
+  "n": 16,
+  "finished": 12,
+  "boxed": 12,
+  "correct": 9,
+  "rows": [
+   {
+    "id": "math_train_algebra_0",
+    "finished": false,
+    "given": null,
+    "truth": "0",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_1",
+    "finished": false,
+    "given": null,
+    "truth": "98",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_2",
+    "finished": true,
+    "given": "4",
+    "truth": "4",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_3",
+    "finished": true,
+    "given": "17",
+    "truth": "17",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_4",
+    "finished": true,
+    "given": "6",
+    "truth": "6",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_5",
+    "finished": true,
+    "given": "(3,-1)",
+    "truth": "(3, -1)",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_6",
+    "finished": false,
+    "given": null,
+    "truth": "[0,3)",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_7",
+    "finished": true,
+    "given": "11",
+    "truth": "11",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_8",
+    "finished": false,
+    "given": null,
+    "truth": "-7",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_9",
+    "finished": true,
+    "given": "42328",
+    "truth": "\\$42409",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_10",
+    "finished": true,
+    "given": "0",
+    "truth": "0",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_11",
+    "finished": true,
+    "given": "-\\frac{33}{2}",
+    "truth": "k = \\frac{-33}{2}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_12",
+    "finished": true,
+    "given": "2",
+    "truth": "2 \\text{ euros}",
+    "correct": false
+   },
+   {
+    "id": "math_train_algebra_13",
+    "finished": true,
+    "given": "3",
+    "truth": "3",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_14",
+    "finished": true,
+    "given": "41",
+    "truth": "41",
+    "correct": true
+   },
+   {
+    "id": "math_train_algebra_15",
+    "finished": true,
+    "given": "4",
+    "truth": "4",
+    "correct": true
+   }
+  ]
+ }
+}

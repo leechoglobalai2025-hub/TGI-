@@ -1,0 +1,97 @@
+{
+ "base": {
+  "name": "不改动",
+  "cap_before": 8192,
+  "cap_after": 16384,
+  "continued": 29,
+  "before": {
+   "n": 32,
+   "finished": 3,
+   "boxed": 3,
+   "correct": 3
+  },
+  "after": {
+   "n": 32,
+   "finished": 3,
+   "boxed": 3,
+   "correct": 3
+  },
+  "loops_after": 28,
+  "hit_cap_after": 29,
+  "lengths_finished": [
+   4434,
+   3130,
+   2917
+  ],
+  "seconds": 2431.886111497879
+ },
+ "blind_a6": {
+  "name": "盲测方向+盲测神经元 α=6",
+  "cap_before": 8192,
+  "cap_after": 16384,
+  "continued": 29,
+  "before": {
+   "n": 32,
+   "finished": 3,
+   "boxed": 3,
+   "correct": 3
+  },
+  "after": {
+   "n": 32,
+   "finished": 6,
+   "boxed": 6,
+   "correct": 6
+  },
+  "loops_after": 2,
+  "hit_cap_after": 26,
+  "lengths_finished": [
+   16010,
+   3374,
+   5299,
+   7019,
+   9585,
+   13447
+  ],
+  "seconds": 2413.8803610801697
+ },
+ "mit": {
+  "name": "参照：MIT 的实际改动",
+  "cap_before": 8192,
+  "cap_after": 16384,
+  "continued": 20,
+  "before": {
+   "n": 32,
+   "finished": 12,
+   "boxed": 12,
+   "correct": 12
+  },
+  "after": {
+   "n": 32,
+   "finished": 17,
+   "boxed": 17,
+   "correct": 17
+  },
+  "loops_after": 2,
+  "hit_cap_after": 15,
+  "lengths_finished": [
+   6876,
+   6109,
+   13500,
+   4518,
+   14020,
+   11591,
+   5481,
+   3494,
+   1105,
+   2079,
+   1977,
+   2910,
+   6208,
+   14409,
+   1573,
+   11594,
+   4624
+  ],
+  "seconds": 1684.6209099292755
+ }
+}
